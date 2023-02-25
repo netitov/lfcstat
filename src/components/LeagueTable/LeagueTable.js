@@ -5,23 +5,10 @@ import LeagueTableHeader from './LeagueTableHeader';
 
 function LeagueTable(props) {
 
-
   return (
     <table className="table">
       <thead>
-        <tr className="table__head-row">
-          {Array.from(props.thSet).splice(1, 12).map((i) => {
-            return (
-              <LeagueTableHeader
-                key={i}
-                value={i}
-                onThClick={props.onThClick}
-                thSet={Array.from(props.thSet)}
-                /* activeColumns={props.activeColumns} */
-              />
-            )
-          })}
-        </tr>
+        <LeagueTableHeader />
       </thead>
       <tbody>
         {props.standings.map((i) => {
@@ -29,6 +16,7 @@ function LeagueTable(props) {
             <LeagueTableRow
               key={i._id}
               position={i.position}
+              logo={i.logo}
               teamName={i.teamName}
               matches={i.matches}
               wins={i.wins}

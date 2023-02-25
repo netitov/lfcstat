@@ -23,10 +23,10 @@ function App() {
       api.getStandings()
     ])
     .then((st) => {
-      console.log(st[0])
       localStorage.setItem('standings', JSON.stringify(st[0]));
       const lsData = JSON.parse(localStorage.getItem('standings'));
-      setStandings(lsData);
+      const result = [...lsData].sort((a,b) => a.position - b.position)
+      setStandings(result);
       lsData.forEach((i) => { //шапка таблицы из local storage
         Object.keys(i).forEach((k) => {
           tableHeaderSet.add(k);

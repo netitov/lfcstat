@@ -22,13 +22,22 @@ function LeagueTableHeader(props) {
     (props.value === 'goalsCon') ? 'ПМ' :
     (props.value === 'scoreDif') ? 'РМ' :
     (props.value === 'points') ? 'О' :
-    'Другое';
+    'other';
 
   return (
-      <th onClick={handleSorting} data-title={props.value}>
-        {headerTitle}
-        {/* <img className={sortLogoClass} src={sortingLogo} alt="sorting"></img> */}
-      </th>
+    <tr className="table__head-row">
+      <th onClick={handleSorting} data-title="position">№</th>
+      <th onClick={handleSorting} data-title="teamName" colSpan="2" className="table__head-cell_wide">Команда</th>
+      <th onClick={handleSorting} data-title="matches">И</th>
+      <th onClick={handleSorting} data-title="wins">В</th>
+      <th onClick={handleSorting} data-title="draws">Н</th>
+      <th onClick={handleSorting} data-title="losses">П</th>
+      <th onClick={handleSorting} data-title="goalsSc">ЗМ</th>
+      <th onClick={handleSorting} data-title="goalsCon">ПМ</th>
+      <th onClick={handleSorting} data-title="scoreDif">РМ</th>
+      <th onClick={handleSorting} data-title="points">О</th>
+    </tr>
+
   );
 }
 

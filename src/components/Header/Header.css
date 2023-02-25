@@ -1,5 +1,5 @@
 .header {
-  background-color: rgb(49 49 49);
+  background-color: var(--second-grey);
 }
 
 .nav {

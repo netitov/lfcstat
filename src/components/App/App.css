@@ -1,12 +1,20 @@
 :root {
   --page-width: 95%;
   --header-font: 18px;
+  --page-background: rgb(31 31 31);
+  --second-grey: #272727;
+  --font-color: #c1c1c1;
+  --radius-table: 10px;
+  --padding-table: 15px;
+  --main-font: 14px;
 }
 
 .page {
   min-height: 100vh;
-  background-color: rgb(35 35 35);
+  background-color: var(--page-background);
   font-family: Century Gothic, Arial, Helvetica, Sans-serif;
+  color: var(--font-color);
+  font-size: var(--main-font);
 }
 
 .page__container {
