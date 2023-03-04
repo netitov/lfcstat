@@ -4,9 +4,11 @@
   --page-background: rgb(31 31 31);
   --second-grey: #272727;
   --font-color: #c1c1c1;
+  --light-grey: #828282;
   --radius-table: 10px;
   --padding-table: 15px;
   --main-font: 14px;
+  --transition: all 0.3s
 }
 
 .page {

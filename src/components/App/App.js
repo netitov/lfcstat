@@ -35,8 +35,7 @@ function App() {
       localStorage.setItem('events', JSON.stringify(evts));
       const eventsData = JSON.parse(localStorage.getItem('events'));
       const sorteredEvents = [...eventsData].sort((a,b) => new Date(a.startAt) - new Date(b.startAt));
-      setNearEvents(sorteredEvents.filter((i) => i.startAt > dayjs().format()).slice(0, 1));
-      //setNearEvents(eventsData);
+      setNearEvents(sorteredEvents.filter((i) => i.startAt > dayjs().format()).slice(0, 5));
     })
     .catch((err) => {
       console.log(err);

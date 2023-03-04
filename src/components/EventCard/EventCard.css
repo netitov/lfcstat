@@ -1,17 +1,46 @@
 .eventCard {
-
+  display: grid;
+  grid-template-columns: auto 50px auto;
+  align-items: center;
+  justify-content: center;
+  grid-column-gap: 10px;
+  grid-row-gap: 8px;
+  background: var(--second-grey);
+  border-radius: var(--radius-table);
+  padding: 15px;
 }
 
 .eventCard__teamContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+}
 
+.eventCard__teamContainer_away {
+  justify-content: flex-start;
 }
 
 .eventCard__team {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 95px;
+}
 
+.eventCard__team_home {
+  text-align: end;
 }
 
 .eventCard__logo {
+  width: 35px;
+}
 
+.eventCard__dateContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
 }
 
 .eventCard__time {
@@ -19,9 +48,15 @@
 }
 
 .eventCard__date {
-
+  color: var(--light-grey);
 }
 
 .eventCard__challenge {
-
+  display: grid;
+  grid-column: 2;
+  align-items: baseline;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--light-grey);
+  white-space: nowrap;
 }

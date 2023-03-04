@@ -1,3 +1,25 @@
+.standings__headingContainer {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.standings__heading {
+  margin: 0;
+  font-size: var(--header-font);
+}
+
+.standings__link {
+  color: var(--light-grey);
+  transition: var(--transition);
+}
+
+.standings__link:hover {
+  color: var(--font-color);
+}
+
 .table {
   padding: var(--padding-table);
   background: var(--second-grey);

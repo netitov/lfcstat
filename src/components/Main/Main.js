@@ -6,9 +6,6 @@ import Events from '../Events/Events';
 function Main(props) {
   return (
     <main className="main">
-      <div className="main__container">
-        <h1 className="main__heading"></h1>
-        <p className="main__description"></p>
         <LeagueTable
           onThClick={props.onThClick}
           /* activeColumns={props.activeColumns} */
@@ -18,7 +15,6 @@ function Main(props) {
         <Events
           events={props.events}
         />
-        </div>
     </main>
   );
 }

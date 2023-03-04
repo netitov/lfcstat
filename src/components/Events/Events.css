@@ -1,0 +1,26 @@
+.events {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.events__container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.events__heading {
+  margin: 0;
+  font-size: var(--header-font);
+}
+
+.events__link {
+  color: var(--light-grey);
+  transition: var(--transition);
+}
+
+.events__link:hover {
+  color: var(--font-color);
+}
