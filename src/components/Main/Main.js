@@ -1,6 +1,7 @@
 import React from 'react';
 
 import LeagueTable from '../LeagueTable/LeagueTable';
+import Events from '../Events/Events';
 
 function Main(props) {
   return (
@@ -13,6 +14,9 @@ function Main(props) {
           /* activeColumns={props.activeColumns} */
           thSet={props.thSet}
           standings={props.standings}
+        />
+        <Events
+          events={props.events}
         />
         </div>
     </main>
