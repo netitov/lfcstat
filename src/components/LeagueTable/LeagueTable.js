@@ -13,7 +13,19 @@ function LeagueTable(props) {
       </div>
       <table className="standings__table table">
         <thead>
-          <LeagueTableHeader />
+
+            <tr className="table__head-row">
+              {props.stHeaderShort.map((i) => {
+                return (
+                  <LeagueTableHeader
+                    title={i[1]}
+                    name={i[0]}
+                    key={i[0]}
+                  />
+                )
+              })}
+
+            </tr>
         </thead>
         <tbody>
           {props.standings.map((i) => {
@@ -24,11 +36,6 @@ function LeagueTable(props) {
                 logo={i.logo}
                 teamName={i.teamName}
                 matches={i.matches}
-                wins={i.wins}
-                draws={i.draws}
-                losses={i.losses}
-                goalsSc={i.goalsSc}
-                goalsCon={i.goalsCon}
                 scoreDif={i.scoreDif}
                 points={i.points}
               />

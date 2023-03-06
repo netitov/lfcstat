@@ -39,6 +39,10 @@
   min-width: 150px;
 }
 
+.table__head-cell_inactive {
+  display: none;
+}
+
 .table__row {
   height: 35px;
   text-align: center;
@@ -59,6 +63,7 @@
 .table__data_non-align {
   text-align: start;
   padding-left: 12px;
+  min-width: 120px;
 }
 
 .table__data_ucl {
@@ -71,4 +76,8 @@
 
 .table__data_el {
   border-left: 2px solid #ffc107;
+}
+
+.table__data_inactive {
+  display: none;
 }

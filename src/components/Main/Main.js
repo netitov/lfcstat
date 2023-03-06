@@ -9,8 +9,8 @@ function Main(props) {
         <LeagueTable
           onThClick={props.onThClick}
           /* activeColumns={props.activeColumns} */
-          thSet={props.thSet}
           standings={props.standings}
+          stHeaderShort={props.stHeaderShort}
         />
         <Events
           events={props.events}

@@ -1,5 +1,6 @@
 import React from 'react';
-import sortingLogo from '../../images/icons8-сортировка-по-возрастанию-48.png';
+//import sortingLogo from '../../images/icons8-сортировка-по-возрастанию-48.png';
+
 
 function LeagueTableHeader(props) {
 
@@ -12,7 +13,7 @@ function LeagueTableHeader(props) {
     }
   }
 
-  const headerTitle = (props.value === 'position') ? '№' :
+ /*  const headerTitle = (props.value === 'position') ? '№' :
     (props.value === 'teamName') ? 'Команда' :
     (props.value === 'matches') ? 'И' :
     (props.value === 'wins') ? 'В' :
@@ -22,22 +23,25 @@ function LeagueTableHeader(props) {
     (props.value === 'goalsCon') ? 'ПМ' :
     (props.value === 'scoreDif') ? 'РМ' :
     (props.value === 'points') ? 'О' :
-    'other';
+    'other'; */
+
+  /* <tr className="table__head-row">
+      <th onClick={handleSorting} data-title="position" className={cellClass}>№</th>
+      <th onClick={handleSorting} data-title="teamName" colSpan="2" className="table__head-cell_wide">Команда</th>
+      <th onClick={handleSorting} data-title="matches" className={cellClass}>И</th>
+      <th onClick={handleSorting} data-title="wins" className={cellClass}>В</th>
+      <th onClick={handleSorting} data-title="draws" className={cellClass}>Н</th>
+      <th onClick={handleSorting} data-title="losses" className={cellClass}>П</th>
+      <th onClick={handleSorting} data-title="goalsSc" className={cellClass}>ЗМ</th>
+      <th onClick={handleSorting} data-title="goalsCon" className={cellClass}>ПМ</th>
+      <th onClick={handleSorting} data-title="scoreDif" className={cellClass}>РМ</th>
+      <th onClick={handleSorting} data-title="points" className={cellClass}>О</th>
+    </tr> */
 
   return (
-    <tr className="table__head-row">
-      <th onClick={handleSorting} data-title="position">№</th>
-      <th onClick={handleSorting} data-title="teamName" colSpan="2" className="table__head-cell_wide">Команда</th>
-      <th onClick={handleSorting} data-title="matches">И</th>
-      <th onClick={handleSorting} data-title="wins">В</th>
-      <th onClick={handleSorting} data-title="draws">Н</th>
-      <th onClick={handleSorting} data-title="losses">П</th>
-      <th onClick={handleSorting} data-title="goalsSc">ЗМ</th>
-      <th onClick={handleSorting} data-title="goalsCon">ПМ</th>
-      <th onClick={handleSorting} data-title="scoreDif">РМ</th>
-      <th onClick={handleSorting} data-title="points">О</th>
-    </tr>
-
+    <th onClick={handleSorting} data-title={props.title}
+      colSpan={props.name === 'Команда' ? 2 : 1}>{props.name}
+    </th>
   );
 }
 

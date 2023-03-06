@@ -7,7 +7,7 @@
   grid-row-gap: 8px;
   background: var(--second-grey);
   border-radius: var(--radius-table);
-  padding: 15px;
+  padding: 13px;
 }
 
 .eventCard__teamContainer {

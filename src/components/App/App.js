@@ -2,6 +2,7 @@ import React from 'react';
 import dayjs from 'dayjs';
 import Api from '../../utils/Api';
 import { SERVER_API } from '../../utils/config';
+import { standingsHeader, standingsHeaderShort, gamesToShow } from '../../utils/constants';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 
@@ -10,7 +11,6 @@ let tableHeaderSet = new Set();
 function App() {
 
   const [standings, setStandings] = React.useState([]);
-  const [events, setEvents] = React.useState([]);
   const [nearEvents, setNearEvents] = React.useState([]);
 
   const api = new Api ({
@@ -34,8 +34,8 @@ function App() {
       });
       localStorage.setItem('events', JSON.stringify(evts));
       const eventsData = JSON.parse(localStorage.getItem('events'));
-      const sorteredEvents = [...eventsData].sort((a,b) => new Date(a.startAt) - new Date(b.startAt));
-      setNearEvents(sorteredEvents.filter((i) => i.startAt > dayjs().format()).slice(0, 5));
+      const sorteredEvents = [...eventsData].sort((a,b) => dayjs(a.startAt) - dayjs(b.startAt));
+      setNearEvents(sorteredEvents.filter((i) => dayjs.utc(i.startAt).format() >= dayjs.utc().format()).slice(0, gamesToShow));
     })
     .catch((err) => {
       console.log(err);
@@ -48,8 +48,8 @@ function App() {
         <Header />
         <Main
           standings={standings}
-          thSet={tableHeaderSet}
           events={nearEvents}
+          stHeaderShort={standingsHeaderShort}
         />
 
       </div>
