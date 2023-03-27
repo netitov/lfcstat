@@ -60,7 +60,7 @@
 }
 
 .table__row:nth-child(odd) {
-  background: #353434;
+  background: var(--table-grey);
 }
 
 .table__row .table__row_main {

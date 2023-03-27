@@ -1,7 +1,7 @@
 .main {
   display: flex;
   justify-content: center;
-  width: 95%;
+  width: var(--page-width);
   margin: auto;
   margin-top: 30px;
   gap: 20px;

@@ -8,7 +8,7 @@ function Events(props) {
   return (
     <div className="events">
       <div className="events__container">
-        <h2 className="events__heading">Расписание</h2>
+        <h2 className="events__heading">{props.tableTitle}</h2>
         <a className="events__link" href="#">Подробнее</a>
       </div>
 
@@ -21,7 +21,10 @@ function Events(props) {
             awayTeamName={i.awayTeamName}
             awayTeamLogo={i.awayTeamLogo}
             challenge={i.challenge}
+            homeScore={i.homeScore}
+            awayScore={i.awayScore}
             key={i._id}
+            status={i.status}
           />
         )
       })}

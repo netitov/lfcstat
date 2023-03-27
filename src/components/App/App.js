@@ -13,6 +13,7 @@ function App() {
   const [standings, setStandings] = React.useState([]);
   const [shortStandings, setShortStandings] = React.useState([]);
   const [nearEvents, setNearEvents] = React.useState([]);
+  const [finishedEvents, setFinishedEvents] = React.useState([]);
 
   const api = new Api ({
     baseUrl: SERVER_API,
@@ -61,6 +62,11 @@ function App() {
       localStorage.setItem('events', JSON.stringify(evts));
       const sorteredEvents = evts.sort((a,b) => dayjs(a.startAt) - dayjs(b.startAt));
       setNearEvents(sorteredEvents.filter((i) => dayjs.utc(i.startAt).format() >= dayjs.utc().format()).slice(0, gamesToShow));
+
+      //finished events
+      const finishedGames = sorteredEvents.filter((i) => i.status === 'finished');
+      setFinishedEvents(finishedGames.slice(-gamesToShow));
+
     })
     .catch((err) => {
       console.log(err);
@@ -79,6 +85,7 @@ function App() {
               <Main
                 standings={shortStandings}
                 events={nearEvents}
+                finishedEvents={finishedEvents}
                 standingsHeader={standingsHeaderShort}
               />
             }
