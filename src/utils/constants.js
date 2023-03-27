@@ -20,3 +20,7 @@ export const standingsHeaderShort = [
 ];
 
 export const gamesToShow = 5;
+export const standingsLimit = 10;
+export const mainTeam = 'Liverpool';
+
+export const shortStEntries = ['position', 'logo', 'teamName', 'matches', 'scoreDif', 'points'];

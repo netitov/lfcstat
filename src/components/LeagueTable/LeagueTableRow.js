@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { mainTeam } from '../../utils/constants';
 
 function LeagueTableRow(props) {
 
@@ -16,7 +17,7 @@ function LeagueTableRow(props) {
 
   return (
     <tr className='table__row'
-      style={props.teamName === 'Liverpool' ? {background: "#535353"} : {background: "auto"}}
+      style={props.teamName === mainTeam ? {background: "#535353"} : {background: "auto"}}
     >
       <td className={positionClass}>{props.position}</td>
       <td>
