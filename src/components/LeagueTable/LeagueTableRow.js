@@ -16,7 +16,7 @@ function LeagueTableRow(props) {
   const activityClass = location === '/' ? ' table__data_inactive' : '';
 
   return (
-    <tr className='table__row'
+    <tr className="table__row"
       style={props.teamName === mainTeam ? {background: "#535353"} : {background: "auto"}}
     >
       <td className={positionClass}>{props.position}</td>

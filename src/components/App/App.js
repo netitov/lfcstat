@@ -1,10 +1,12 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import dayjs from 'dayjs';
 import Api from '../../utils/Api';
 import { SERVER_API } from '../../utils/config';
-import { standingsHeader, standingsHeaderShort, gamesToShow, standingsLimit, mainTeam, shortStEntries } from '../../utils/constants';
+import { standingsHeader, standingsHeaderShort, gamesToShow, standingsLimit, mainTeam } from '../../utils/constants';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
+import LeagueTable from '../LeagueTable/LeagueTable';
 
 function App() {
 
@@ -69,11 +71,30 @@ function App() {
     <div className="page">
       <div className="page__container">
         <Header />
-        <Main
-          standings={shortStandings}
-          events={nearEvents}
-          stHeaderShort={standingsHeaderShort}
-        />
+        <Routes>
+
+          <Route
+            path="/"
+            element={
+              <Main
+                standings={shortStandings}
+                events={nearEvents}
+                standingsHeader={standingsHeaderShort}
+              />
+            }
+          />
+
+          <Route
+            path="/standings"
+            element={
+              <LeagueTable
+                standings={standings}
+                standingsHeader={standingsHeader}
+              />
+            }
+          />
+
+        </Routes>
 
       </div>
     </div>

@@ -6,15 +6,14 @@ import Events from '../Events/Events';
 function Main(props) {
   return (
     <main className="main">
-        <LeagueTable
-          onThClick={props.onThClick}
-          /* activeColumns={props.activeColumns} */
-          standings={props.standings}
-          stHeaderShort={props.stHeaderShort}
-        />
-        <Events
-          events={props.events}
-        />
+      <LeagueTable
+        onThClick={props.onThClick}
+        standings={props.standings}
+        standingsHeader={props.standingsHeader}
+      />
+      <Events
+        events={props.events}
+      />
     </main>
   );
 }
