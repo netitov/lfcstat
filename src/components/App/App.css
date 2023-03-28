@@ -9,7 +9,8 @@
   --radius-table: 10px;
   --padding-table: 15px;
   --main-font: 14px;
-  --transition: all 0.3s
+  --transition: all 0.3s;
+  --main-gap: 25px;
 }
 
 .page {
