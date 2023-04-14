@@ -14,6 +14,7 @@ function App() {
   const [shortStandings, setShortStandings] = React.useState([]);
   const [nearEvents, setNearEvents] = React.useState([]);
   const [finishedEvents, setFinishedEvents] = React.useState([]);
+  const [news, setNews] = React.useState([]);
 
   const api = new Api ({
     baseUrl: SERVER_API,
@@ -30,9 +31,10 @@ function App() {
   React.useEffect(() => {
     Promise.all([
       api.getStandings(),
-      api.getEvents()
+      api.getEvents(),
+      api.getNews()
     ])
-    .then(([st, evts]) => {
+    .then(([st, evts, nws]) => {
       //whole standings data
       localStorage.setItem('standings', JSON.stringify(st));
       const sortedStandings = st.sort((a,b) => a.position - b.position);
@@ -67,6 +69,9 @@ function App() {
       const finishedGames = sorteredEvents.filter((i) => i.status === 'finished');
       setFinishedEvents(finishedGames.slice(-gamesToShow));
 
+      //news
+      localStorage.setItem('news', JSON.stringify(nws));
+      setNews(nws);
     })
     .catch((err) => {
       console.log(err);
@@ -87,6 +92,7 @@ function App() {
                 events={nearEvents}
                 finishedEvents={finishedEvents}
                 standingsHeader={standingsHeaderShort}
+                news={news}
               />
             }
           />

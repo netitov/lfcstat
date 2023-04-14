@@ -1,0 +1,7 @@
+.news-list {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}

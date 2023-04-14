@@ -2,6 +2,7 @@ import React from 'react';
 import LeagueTable from '../LeagueTable/LeagueTable';
 import Events from '../Events/Events';
 import Navigation from '../Navigation/Navigation';
+import NewsList from '../NewsList/NewsList';
 
 function Main(props) {
   return (
@@ -22,8 +23,12 @@ function Main(props) {
           events={props.events}
           tableTitle="Расписание"
         />
+
       </div>
       <Navigation />
+      <NewsList
+        news={props.news}
+      />
     </main>
   );
 }

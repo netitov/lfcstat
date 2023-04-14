@@ -1,11 +1,13 @@
 .main {
   width: var(--page-width);
+  max-width: 1200px;
   margin: auto;
   margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--main-gap);
+  padding-bottom: 40px;
 }
 
 .main__container {

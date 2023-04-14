@@ -25,6 +25,13 @@ export default class Api {
     .then(this._checkServerResponse);
   }
 
+  getNews() {
+    return fetch(`${this._url}/news`, {
+      headers: {'Content-Type': 'application/json'}
+    })
+    .then(this._checkServerResponse);
+  }
+
   getRecord(record) {
     return fetch(`${this._url}/${record}`, {
       headers: this._headers
