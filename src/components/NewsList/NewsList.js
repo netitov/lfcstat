@@ -22,12 +22,12 @@ function NewsList(props) {
     >
       {filteredNews.map((i) => {
         return (
-          <SplideSlide>
+          <SplideSlide key={i.name}>
             <News
               url={i.url}
               name={i.name}
               image={i.image}
-              key={i.name}
+
             />
           </SplideSlide>
         )

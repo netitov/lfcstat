@@ -2,7 +2,7 @@
   width: var(--page-width);
   max-width: 1200px;
   margin: auto;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   display: flex;
   flex-direction: column;
   align-items: center;

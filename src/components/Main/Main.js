@@ -3,10 +3,12 @@ import LeagueTable from '../LeagueTable/LeagueTable';
 import Events from '../Events/Events';
 import Navigation from '../Navigation/Navigation';
 import NewsList from '../NewsList/NewsList';
+import Promo from '../Promo/Promo';
 
 function Main(props) {
   return (
     <main className="main">
+      <Promo />
       <div className="main__container">
         {/* finished events */}
         <Events
