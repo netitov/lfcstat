@@ -1,20 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import dayjs from 'dayjs';
 import Api from '../../utils/Api';
 import { SERVER_API } from '../../utils/config';
-import { standingsHeader, standingsHeaderShort, gamesToShow, standingsLimit, mainTeam } from '../../utils/constants';
+import { standingsHeader, standingsHeaderShort, gamesToShow, standingsLimit, mainTeam, data } from '../../utils/constants';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import LeagueTable from '../LeagueTable/LeagueTable';
+import ChartsList from '../ChartsList/ChartsList';
+import Chart from "chart.js/auto";
+import { CategoryScale } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+
+Chart.register(CategoryScale);
+Chart.register(ChartDataLabels);
+Chart.defaults.font.family = 'Century Gothic, Arial, Helvetica, Sans-serif';
 
 function App() {
 
-  const [standings, setStandings] = React.useState([]);
-  const [shortStandings, setShortStandings] = React.useState([]);
-  const [nearEvents, setNearEvents] = React.useState([]);
-  const [finishedEvents, setFinishedEvents] = React.useState([]);
-  const [news, setNews] = React.useState([]);
+  const [standings, setStandings] = useState([]);
+  const [shortStandings, setShortStandings] = useState([]);
+  const [nearEvents, setNearEvents] = useState([]);
+  const [finishedEvents, setFinishedEvents] = useState([]);
+  const [news, setNews] = useState([]);
+  const [chartData, setChartData] = useState({
+    labels: data.map((data) => data.year),
+    datasets: [
+      {
+        label: "Users Gained ",
+        data: data.map((data) => data.userGain),
+        borderColor: "black",
+        borderWidth: 2
+      }
+    ]
+  });
 
   const api = new Api ({
     baseUrl: SERVER_API,
@@ -103,6 +122,15 @@ function App() {
               <LeagueTable
                 standings={standings}
                 standingsHeader={standingsHeader}
+              />
+            }
+          />
+
+          <Route
+            path="/charts"
+            element={
+              <ChartsList
+                data={chartData}
               />
             }
           />

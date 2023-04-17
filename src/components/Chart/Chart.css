@@ -1,0 +1,7 @@
+.chart {
+  width: 45%;
+  padding: 8px;
+  box-sizing: border-box;
+  background: var(--second-grey);
+  border-radius: var(--radius-table);
+}

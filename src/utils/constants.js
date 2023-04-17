@@ -31,17 +31,17 @@ export const navBtns = [
   {
     icon: <BsFillPersonFill size={30}/>,
     title: 'Статистика игроков',
-    route: '/players'
+    route: '/stats/players'
   },
   {
     icon: <BsPeopleFill size={30}/>,
     title: 'Статистика команды',
-    route: '/team'
+    route: '/stats/team'
   },
   {
     icon: <BsPersonFillAdd size={30}/>,
     title: 'Сравнение игороков',
-    route: '/compare'
+    route: '/stats/compare'
   },
   {
     icon: <BsBarChartFill size={30}/>,
@@ -83,7 +83,37 @@ export const sources = [
   'uefa.com'
 ];
 
-export const promoImg = 'https://images.unsplash.com/photo-1643796903573-68834ffadcb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80';
+export const promoImg = 'https://images.unsplash.com/photo-1643796903573-68834ffadcb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80';
 
-
-//https://images.unsplash.com/photo-1478112544096-20cf77df3a88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
+export const data = [
+  {
+    id: 1,
+    year: 2016,
+    userGain: 80000,
+    userLost: 823
+  },
+  {
+    id: 2,
+    year: 2017,
+    userGain: 45677,
+    userLost: 345
+  },
+  {
+    id: 3,
+    year: 2018,
+    userGain: 78888,
+    userLost: 555
+  },
+  {
+    id: 4,
+    year: 2019,
+    userGain: 90000,
+    userLost: 4555
+  },
+  {
+    id: 5,
+    year: 2020,
+    userGain: 4300,
+    userLost: 234
+  }
+];

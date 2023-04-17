@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function NavCard(props) {
   return (
     <li className="card">
-      <Link to={`/stats${props.route}`}>
+      <Link to={props.route}>
         {props.children}
         <h3 className="card__title">{props.title}</h3>
       </Link>

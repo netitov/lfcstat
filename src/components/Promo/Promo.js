@@ -1,5 +1,6 @@
 import React from 'react'
 import { promoImg } from '../../utils/constants';
+import imge from '../../images/trung-tran-9y1bFevkShQ-unsplash.jpg'
 
 function Promo() {
   return (
@@ -22,7 +23,7 @@ function Promo() {
           <h3>8</h3>
         </div>
       </div>
-      <img className="promo__img" src={promoImg} />
+      <img className="promo__img" src={imge} />
       <div className="promo__overlay"></div>
 
     </div>
