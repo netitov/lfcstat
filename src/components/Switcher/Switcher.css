@@ -1,0 +1,31 @@
+.switcher {
+  margin-bottom: 20px;
+  padding: 3px;
+  background: #272727;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  gap: 3px;
+  box-sizing: border-box;
+}
+
+.switcher__overlay {
+  position: absolute;
+  height: 30px;
+  width: 50%;
+  background: #5b5b5b;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.switcher__btn {
+  background: none;
+  border: none;
+  color: inherit;
+  height: 30px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  padding: 7px;
+  box-sizing: border-box;
+}

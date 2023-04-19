@@ -81,10 +81,8 @@ function Chart(props) {
         borderColor: '#c8102e52',
         backgroundColor: ({chart: {ctx}}) => {
           const bg = ctx.createLinearGradient(0, 0, 0, 400);
-          // More config for your gradient
           bg.addColorStop(0, '#c8102e52');
           bg.addColorStop(0.5, '#c8102e00');
-          //bg.addColorStop(1, '#c8102e00');
           return bg;
         },
         lineTension: 0.3,

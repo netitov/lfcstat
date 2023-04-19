@@ -1,8 +1,15 @@
 .chart-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.chart-list__container {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-  padding-bottom: 40px;
 }

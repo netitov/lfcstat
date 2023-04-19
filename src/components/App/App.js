@@ -24,20 +24,8 @@ function App() {
   const [finishedEvents, setFinishedEvents] = useState([]);
   const [news, setNews] = useState([]);
   const [teamCharts, setTeamCharts] = useState([]);
-  const [labels, setLabels] = useState([]);
 
   const initAtOpt = 'goalsScored';
-  /* const [chartData, setChartData] = useState({
-    labels: data.map((data) => data.year),
-    datasets: [
-      {
-        label: "Users Gained ",
-        data: data.map((data) => data.userGain),
-        borderColor: "black",
-        borderWidth: 2
-      }
-    ]
-  }); */
 
   const api = new Api ({
     baseUrl: SERVER_API,
@@ -100,7 +88,6 @@ function App() {
       //team stats for charts
       const sortedTs = ts.sort((a, b) => a.year.localeCompare(b.year));
       setTeamCharts(sortedTs);
-      setLabels(sortedTs.map((i) => i.year));
     })
     .catch((err) => {
       console.log(err);
@@ -146,7 +133,6 @@ function App() {
             path="/charts"
             element={
               <ChartsList
-                labels={labels}
                 initOption={initAtOpt}
                 teamCharts={teamCharts}
               />
