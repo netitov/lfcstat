@@ -1,7 +1,18 @@
-import React from 'react';
-import { Bar } from "react-chartjs-2";
+import React, { useState } from 'react';
+import { Bar, Line, ScriptableContext } from "react-chartjs-2";
+import Select from '../Select/Select';
 
 function Chart(props) {
+
+  const [option, setOption] = useState(props.initOption);
+  const perMatch = props.tsOptions.find((i) => i.name === option).perMatch;
+
+  const statsValues = props.teamCharts.map((i) => perMatch ? (i[option] / i.matches).toFixed(2) : i[option].toFixed(2));
+
+
+  function selectOption(data) {
+    setOption(data);
+  }
 
   const options = {
     responsive: true,
@@ -11,15 +22,22 @@ function Chart(props) {
         display: false
       },
       title: {
-        display: true,
+        display: false,
         text: 'Аттака',
+        padding: {
+          bottom: 25
+        },
+        font: {
+          size: 14
+        },
+
       },
       datalabels: {
         anchor: 'end',
         align: 'end',
         labels: {
           value: {
-            color: '#e074748f'
+            color: '#e074748f' /* props.type === 'attack' || props.type === 'defence' ? '#e074748f' : '#f6eb616b' */ //#f6eb616b
           }
         }
       }
@@ -41,35 +59,62 @@ function Chart(props) {
           display: false,
         },
       }
+    },
+    layout: {
+      padding: {
+        left: 10,
+        rigt: 10,
+        top: 25,
+        bottom: 10
+      }
     }
-
   };
 
-  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
   const data = {
-    labels,
+    labels: props.labels,
     datasets: [
       {
         label: "My First dataset",
-        backgroundColor: '#ff17004d',
-        data: [5, 10, 5, 2, 20, 30, 45],
+        //backgroundColor: '#c8102e52',
+        data: statsValues,
         borderRadius: 7,
-        borderColor: '#fff'
-
+        borderColor: '#c8102e52',
+        backgroundColor: ({chart: {ctx}}) => {
+          const bg = ctx.createLinearGradient(0, 0, 0, 400);
+          // More config for your gradient
+          bg.addColorStop(0, '#c8102e52');
+          bg.addColorStop(0.5, '#c8102e00');
+          //bg.addColorStop(1, '#c8102e00');
+          return bg;
+        },
+        lineTension: 0.3,
+        fill: true,
       },
 
     ],
   };
 
+
   return (
     <div className="chart">
-      <Bar
+      <div className="chart__container">
+        <h3>{props.typeRu}</h3>
+        <Select
+          tsOptions={props.tsOptions}
+          type={props.type}
+          selectOption={selectOption}
+          initOption={props.initOption}
+        />
+      </div>
+      <p className={perMatch ? 'chart__info' : 'chart__info chart__info_inactive'}>в среднем за матч</p>
+      <Line
         data={data}
         options={options}
       />
+
+
     </div>
   )
 }
 
-export default Chart
+export default Chart;

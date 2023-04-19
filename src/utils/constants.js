@@ -85,35 +85,65 @@ export const sources = [
 
 export const promoImg = 'https://images.unsplash.com/photo-1643796903573-68834ffadcb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80';
 
-export const data = [
+export const tsOptions = [
   {
-    id: 1,
-    year: 2016,
-    userGain: 80000,
-    userLost: 823
+    name: 'bigChancesCreated',
+    nameRu: 'Опасные моменты',
+    type: 'attack',
+    perMatch: true
   },
   {
-    id: 2,
-    year: 2017,
-    userGain: 45677,
-    userLost: 345
+    name: 'goalsScored',
+    nameRu: 'Забито голов',
+    type: 'attack',
+    perMatch: true
   },
   {
-    id: 3,
-    year: 2018,
-    userGain: 78888,
-    userLost: 555
+    name: 'interceptions',
+    nameRu: 'Перехваты',
+    type: 'defence',
+    perMatch: true
   },
   {
-    id: 4,
-    year: 2019,
-    userGain: 90000,
-    userLost: 4555
+    name: 'goalsConceded',
+    nameRu: 'Пропущено голов',
+    type: 'defence',
+    perMatch: true
   },
   {
-    id: 5,
-    year: 2020,
-    userGain: 4300,
-    userLost: 234
-  }
+    name: 'fouls',
+    nameRu: 'Фолы',
+    type: 'discipline',
+    perMatch: true
+  },
+  {
+    name: 'averageBallPossession',
+    nameRu: 'Владение мячем %',
+    type: 'team',
+    perMatch: false
+  },
+];
+
+export const teamCharts = [
+  {
+    type: 'attack',
+    typeRu: 'Аттака',
+    initOpt: 'goalsScored'
+  },
+  {
+    type: 'defence',
+    typeRu: 'Оборона',
+    initOpt: 'goalsConceded'
+  },
+  {
+    type: 'discipline',
+    typeRu: 'Дисциплина',
+    initOpt: 'fouls'
+  },
+  {
+    type: 'team',
+    typeRu: 'Взимодействие',
+    initOpt: 'averageBallPossession'
+  },
+
 ];

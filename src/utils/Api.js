@@ -32,28 +32,13 @@ export default class Api {
     .then(this._checkServerResponse);
   }
 
-  getRecord(record) {
-    return fetch(`${this._url}/${record}`, {
-      headers: this._headers
+  getTeamStats() {
+    return fetch(`${this._url}/team-stats`, {
+      headers: {'Content-Type': 'application/json'}
     })
     .then(this._checkServerResponse);
   }
 
-  addRecord(record) {
-    return fetch(`${this._url}`, {
-      method: 'POST',
-      headers: this._headers,
-      body: JSON.stringify(record)
-    })
-    .then(this._checkServerResponse);
-  }
 
-  deleteRecord(record) {
-    return fetch(`${this._url}/${record}`, {
-      method: 'DELETE',
-      headers: this._headers
-    })
-    .then(this._checkServerResponse);
-  }
 
 }

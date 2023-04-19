@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import dayjs from 'dayjs';
 import Api from '../../utils/Api';
 import { SERVER_API } from '../../utils/config';
-import { standingsHeader, standingsHeaderShort, gamesToShow, standingsLimit, mainTeam, data } from '../../utils/constants';
+import { standingsHeader, standingsHeaderShort, gamesToShow, standingsLimit, mainTeam } from '../../utils/constants';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import LeagueTable from '../LeagueTable/LeagueTable';
@@ -23,7 +23,11 @@ function App() {
   const [nearEvents, setNearEvents] = useState([]);
   const [finishedEvents, setFinishedEvents] = useState([]);
   const [news, setNews] = useState([]);
-  const [chartData, setChartData] = useState({
+  const [teamCharts, setTeamCharts] = useState([]);
+  const [labels, setLabels] = useState([]);
+
+  const initAtOpt = 'goalsScored';
+  /* const [chartData, setChartData] = useState({
     labels: data.map((data) => data.year),
     datasets: [
       {
@@ -33,7 +37,7 @@ function App() {
         borderWidth: 2
       }
     ]
-  });
+  }); */
 
   const api = new Api ({
     baseUrl: SERVER_API,
@@ -51,9 +55,10 @@ function App() {
     Promise.all([
       api.getStandings(),
       api.getEvents(),
-      api.getNews()
+      api.getNews(),
+      api.getTeamStats()
     ])
-    .then(([st, evts, nws]) => {
+    .then(([st, evts, nws, ts]) => {
       //whole standings data
       localStorage.setItem('standings', JSON.stringify(st));
       const sortedStandings = st.sort((a,b) => a.position - b.position);
@@ -91,14 +96,25 @@ function App() {
       //news
       localStorage.setItem('news', JSON.stringify(nws));
       setNews(nws);
+
+      //team stats for charts
+      const sortedTs = ts.sort((a, b) => a.year.localeCompare(b.year));
+      setTeamCharts(sortedTs);
+      setLabels(sortedTs.map((i) => i.year));
     })
     .catch((err) => {
       console.log(err);
     })
   }, [])
 
+  function test() {
+    //console.log(teamCharts)
+  }
+
+
+
   return (
-    <div className="page">
+    <div className="page" onClick={test}>
       <div className="page__container">
         <Header />
         <Routes>
@@ -130,7 +146,9 @@ function App() {
             path="/charts"
             element={
               <ChartsList
-                data={chartData}
+                labels={labels}
+                initOption={initAtOpt}
+                teamCharts={teamCharts}
               />
             }
           />
