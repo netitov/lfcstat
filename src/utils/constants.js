@@ -1,4 +1,11 @@
 import { BsFillPersonFill, BsPeopleFill, BsPersonFillAdd, BsBarChartFill } from 'react-icons/bs';
+import soccer from '../images/soccer-logo-690.svg';
+import sportEx from '../images/sportEx.png';
+import rambler from '../images/logo_ru.png';
+import sports from '../images/sports.png';
+import other from '../images/lfc.png';
+import uefa from '../images/uefa.png';
+import chemp from '../images/chemp.png';
 
 export const standingsHeader = [
   ['№', 'Номер'],
@@ -74,13 +81,35 @@ export const newsPic = [
 ];
 
 export const sources = [
-  'sport-express.ru',
-  'sports.ru',
-  'championat.com',
-  'livesport.ru',
-  'sport.rambler.ru',
-  'soccer.ru',
-  'uefa.com'
+  {
+    source:'sport-express.ru',
+    logo: sportEx
+  },
+  {
+    source: 'sports.ru',
+    logo: sports
+  },
+  {
+    source: 'championat.com',
+    logo: chemp
+  },
+  {
+    source: 'livesport.ru',
+    logo: other
+  },
+  {
+    source: 'sport.rambler.ru',
+    logo: rambler
+  },
+  {
+    source: 'soccer.ru',
+    logo: soccer
+  },
+  {
+    source: 'uefa.com',
+    logo: uefa
+  },
+
 ];
 
 export const promoImg = 'https://images.unsplash.com/photo-1643796903573-68834ffadcb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80';

@@ -7,7 +7,7 @@ function NewsList(props) {
 
   const filteredNews = props.news.filter((el) => {
     return sources.some((f) => {
-      return el.url.includes(f);
+      return el.url.includes(f.source);
     })
   }).slice(0, 20);
 

@@ -9,14 +9,13 @@ function News(props) {
     return Math.floor(Math.random() * (max - min) + min);
   }
 
-  const source = sources.find(el => props.url.includes(el));
+  const source = sources.find(i => props.url.includes(i.source));
 
   return (
     <a href={props.url} target="_blank" rel="noopener noreferrer" className="news">
-      <img src={newsPic[getRandomInt(0, newsPic.length)]} alt="news"></img>
+      <img src={source.logo} alt="news" className="news__img"></img>
       <div className="news__overlay">
         <h3>{props.name}</h3>
-        <p>{source}</p>
       </div>
     </a>
   )
