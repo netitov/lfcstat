@@ -8,7 +8,7 @@ import Promo from '../Promo/Promo';
 function Main(props) {
   return (
     <main className="main">
-      <Promo />
+      <Promo data={props.data} />
       <div className="main__container">
         {/* finished events */}
         <Events

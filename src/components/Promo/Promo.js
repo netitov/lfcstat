@@ -1,30 +1,99 @@
-import React from 'react'
-import { promoImg } from '../../utils/constants';
-import imge from '../../images/trung-tran-9y1bFevkShQ-unsplash.jpg'
+import React, { useEffect, useState } from 'react'
+import image from '../../images/pngegg.png'
+import { Doughnut } from 'react-chartjs-2';
 
-function Promo() {
+function Promo(props) {
+
+  const [chartsData, setChartsData] = useState({
+    wins: 0,
+    draws: 0,
+    losses: 0,
+    matches: 0,
+    position: 0,
+    goalsSc: 0
+  });
+
+  useEffect(() => {
+    setChartsData(props.data === undefined ? 0 : props.data);
+  })
+
+  const data = {
+    labels: ['Победы', 'Ничьи', 'Поражения'],
+    datasets: [
+      {
+        data: [chartsData.wins, chartsData.draws, chartsData.losses],
+        backgroundColor: [
+          '#febf4c',
+          '#c6d0bc',
+          '#333333',
+        ],
+        borderColor: [
+          '#272727',
+        ],
+        borderWidth: 4,
+      },
+    ],
+  };
+
+  const options = {
+    cutout: 70,
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: {
+          usePointStyle: true,
+          boxWidth: 7,
+          font: {
+            size: 14
+          }
+        }
+      },
+      datalabels: {
+        font: {
+          size: 14,
+        }
+      }
+    },
+  };
+
   return (
     <div className="promo">
-      <div className="promo__cards">
-        <div className="promo__card">
-          <p>Матчей</p>
-          <h3>30</h3>
-        </div>
-        <div className="promo__card">
-          <p>Побед</p>
-          <h3>14</h3>
-        </div>
-        <div className="promo__card">
-          <p>Забито мячей</p>
-          <h3>53</h3>
-        </div>
-        <div className="promo__card">
-          <p>Текущее место</p>
-          <h3>8</h3>
-        </div>
+
+      <div className="promo__container">
+        <img className="promo__img" src={image} />
+        <h1>Статистика и результаты ФК "Ливерпуль"</h1>
       </div>
-      <img className="promo__img" src={imge} />
-      <div className="promo__overlay"></div>
+
+      <div className="promo__cards-container">
+
+        <div className="promo__card">
+          <Doughnut
+            data={data}
+            options={options}
+          />
+          <div className="promo__chart-title">
+            <h3>{chartsData.matches}</h3>
+            <span>матчей</span>
+          </div>
+          <p className="promo__note">*Английская Премьер-лига. Сезон 2022/2023</p>
+        </div>
+
+        <div className="promo__small-container">
+          <div className="promo__card promo__card_small">
+            <p>Текущее место</p>
+            <h3>{chartsData.position}</h3>
+          </div>
+          <div className="promo__card promo__card_small promo__card_grey">
+            <p>Забито мячей</p>
+            <h3>{chartsData.goalsSc}</h3>
+          </div>
+          <div className="promo__card promo__card_small promo__card_black">
+            <p>% побед</p>
+            <h3>{Math.round(chartsData.wins / chartsData.matches * 100)}</h3>
+          </div>
+        </div>
+
+      </div>
 
     </div>
   )

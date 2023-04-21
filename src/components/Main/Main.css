@@ -1,7 +1,4 @@
 .main {
-  width: var(--page-width);
-  max-width: 1200px;
-  margin: auto;
   /* margin-top: 30px; */
   display: flex;
   flex-direction: column;
@@ -14,6 +11,6 @@
   display: flex;
   justify-content: center;
   /* margin: auto; */
-  gap: var(--main-gap);
+  gap: 20px;
   /* padding-bottom: 20px; */
 }

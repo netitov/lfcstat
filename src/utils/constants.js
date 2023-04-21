@@ -94,7 +94,7 @@ export const tsOptions = [
   },
   {
     name: 'goalsScored',
-    nameRu: 'Забито голов',
+    nameRu: 'Голы',
     type: 'attack',
     perMatch: true
   },
@@ -122,6 +122,85 @@ export const tsOptions = [
     type: 'team',
     perMatch: false
   },
+  {
+    name: 'bigChancesCreatedAgainst',
+    nameRu: 'Допущено моментов',
+    type: 'defence',
+    perMatch: true
+  },
+  {
+    name: 'cleanSheets',
+    nameRu: 'Сухие матчи',
+    type: 'defence',
+    perMatch: false
+  },
+  {
+    name: 'duelsWonPercentage',
+    nameRu: 'Выигранные дуэли %',
+    type: 'defence',
+    perMatch: false
+  },
+  {
+    name: 'shots',
+    nameRu: 'Удары',
+    type: 'attack',
+    perMatch: true
+  },
+  {
+    name: 'shotsAgainst',
+    nameRu: 'Допущено ударов',
+    type: 'defence',
+    perMatch: true
+  },
+  {
+    name: 'tackles',
+    nameRu: 'Отборы',
+    type: 'defence',
+    perMatch: true
+  },
+  {
+    name: 'yellowCards',
+    nameRu: 'Желтые карточки',
+    type: 'discipline',
+    perMatch: true
+  },
+  {
+    name: 'dribbleAttempts',
+    nameRu: 'Попытки дриблинга',
+    type: 'attack',
+    perMatch: true
+  },
+  {
+    name: 'accuratePassesPercentage',
+    nameRu: 'Точность передач',
+    type: 'team',
+    perMatch: false
+  },
+  {
+    name: 'goalsFromInsideTheBox',
+    nameRu: 'Голы из штрафной',
+    type: 'attack',
+    perMatch: true
+  },
+  {
+    name: 'goalsFromOutsideTheBox',
+    nameRu: 'Голы из-за штрафной',
+    type: 'attack',
+    perMatch: false
+  },
+  {
+    name: 'shotsOnTarget',
+    nameRu: 'Удары в створ',
+    type: 'attack',
+    perMatch: true
+  },
+  {
+    name: 'totalCrosses',
+    nameRu: 'Кроссы',
+    type: 'team',
+    perMatch: true
+  },
+
 ];
 
 export const teamCharts = [

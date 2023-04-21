@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Bar, Line, ScriptableContext } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import Select from '../Select/Select';
+
 
 function Chart(props) {
 
@@ -74,7 +75,7 @@ function Chart(props) {
     labels: props.labels,
     datasets: [
       {
-        label: "My First dataset",
+        label: option,
         //backgroundColor: '#c8102e52',
         data: statsValues,
         borderRadius: 7,

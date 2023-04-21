@@ -95,7 +95,7 @@ function App() {
   }, [])
 
   function test() {
-    //console.log(teamCharts)
+    //console.log(standings)
   }
 
 
@@ -115,6 +115,7 @@ function App() {
                 finishedEvents={finishedEvents}
                 standingsHeader={standingsHeaderShort}
                 news={news}
+                data={standings.find((i) => i.teamName === mainTeam)}
               />
             }
           />

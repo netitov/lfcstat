@@ -1,52 +1,102 @@
 .promo {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   position: relative;
 }
 
 .promo__img {
-  width: 100%;
-  max-height: 430px;
+  filter: contrast(0.1);
+  -webkit-filter: contrast(0.1);
+  opacity: 0.2;
+  max-height: 450px;
   border-radius: 15px;
   object-fit: cover;
 }
 
-.promo__overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  background: linear-gradient(90deg, rgb(31 31 31) 0%, rgba(43,43,43,0.2) 50%, rgb(31 31 31) 100%);
+.promo__container {
+  position: relative;
 }
 
-.promo__cards {
-  z-index: 1;
+.promo__container > h1 {
+  margin: 0;
   position: absolute;
-  top: 62%;
-  left: 5%;
+  top: 28%;
+  left: 35%;
+  min-width: 382px;
+  backdrop-filter: blur(4px);
+  background: #1616166b;
+  padding: 3px;
+  font-weight: 100;
+}
+
+.promo__cards-container {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 15px;
 }
 
 .promo__card {
-  width: 120px;
-  height: 85px;
+  width: 290px;
+  box-sizing: border-box;
+  background: #272727;
+  border-radius: 25px;
+  padding: 15px;
+  position: relative;
+}
+
+.promo__chart-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -90%);
+  text-align: center;
+}
+
+.promo__chart-title > h3 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.promo__card_small {
+  width: 130px;
+  height: 90px;
   border-radius: 15px;
-  background: #00000069;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(3px);
+  background: #febf4c;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  color: #1f1f1f;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-.promo__card > h3 {
+.promo__card_small > h3 {
   font-size: 22px;
   margin: 9px 0 0;
 }
 
-.promo__card > p {
+.promo__card_grey {
+  background: #c6d0bc;
+}
 
+.promo__card_black {
+  background: #333333;
+  color: #c1c1c1;
+}
+
+.promo__small-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.promo__note {
+  position: absolute;
+  margin: 0;
+  bottom: -12%;
+  font-size: 0.9em;
+  color: var(--light-grey);
 }

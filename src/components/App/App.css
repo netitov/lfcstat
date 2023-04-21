@@ -10,7 +10,7 @@
   --padding-table: 15px;
   --main-font: 14px;
   --transition: all 0.3s;
-  --main-gap: 25px;
+  --main-gap: 40px;
 }
 
 .page {
@@ -23,6 +23,8 @@
 
 .page__container {
   margin: auto;
+  width: var(--page-width);
+  max-width: 1200px;
 }
 
 
