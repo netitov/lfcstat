@@ -7,9 +7,7 @@ function Chart(props) {
 
   const [option, setOption] = useState(props.initOption);
   const perMatch = props.tsOptions.find((i) => i.name === option).perMatch;
-
   const statsValues = props.teamCharts.map((i) => perMatch ? (i[option] / i.matches).toFixed(2) : i[option].toFixed(2));
-
 
   function selectOption(data) {
     setOption(data);
@@ -59,7 +57,7 @@ function Chart(props) {
         ticks: {
           display: false,
         },
-      }
+      },
     },
     layout: {
       padding: {
@@ -68,10 +66,12 @@ function Chart(props) {
         top: 25,
         bottom: 10
       }
-    }
+    },
+    redraw: false
+
   };
 
-  const data = {
+  var data = {
     labels: props.labels,
     datasets: [
       {

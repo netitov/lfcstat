@@ -95,7 +95,7 @@ function App() {
   }, [])
 
   function test() {
-    //console.log(standings)
+    //console.log(teamCharts)
   }
 
 

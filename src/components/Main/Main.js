@@ -4,6 +4,7 @@ import Events from '../Events/Events';
 import Navigation from '../Navigation/Navigation';
 import NewsList from '../NewsList/NewsList';
 import Promo from '../Promo/Promo';
+import Trophies from '../Trophies/Trophies';
 
 function Main(props) {
   return (
@@ -31,6 +32,7 @@ function Main(props) {
       <NewsList
         news={props.news}
       />
+      <Trophies />
     </main>
   );
 }

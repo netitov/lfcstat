@@ -7,6 +7,14 @@ import other from '../images/lfc.png';
 import uefa from '../images/uefa.png';
 import chemp from '../images/chemp.png';
 
+import plcup from '../images/plcup.png';
+import clcup from '../images/clcup.png';
+import facup from '../images/facup.png';
+import uefacup from '../images/uefa_cup.png';
+import leaguecup from '../images/leaguecup.png';
+import ueafs from '../images/uefa_super_cup.png';
+import fifa from '../images/fifa.png';
+
 export const standingsHeader = [
   ['№', 'Номер'],
   ['Команда', 'Команда'],
@@ -119,115 +127,115 @@ export const tsOptions = [
     name: 'bigChancesCreated',
     nameRu: 'Опасные моменты',
     type: 'attack',
-    perMatch: true
+    perMatch: true,
   },
   {
     name: 'goalsScored',
     nameRu: 'Голы',
     type: 'attack',
-    perMatch: true
+    perMatch: true,
   },
   {
     name: 'interceptions',
     nameRu: 'Перехваты',
     type: 'defence',
-    perMatch: true
+    perMatch: true,
   },
   {
     name: 'goalsConceded',
     nameRu: 'Пропущено голов',
     type: 'defence',
-    perMatch: true
+    perMatch: true,
   },
   {
     name: 'fouls',
     nameRu: 'Фолы',
     type: 'discipline',
-    perMatch: true
+    perMatch: true,
   },
   {
     name: 'averageBallPossession',
     nameRu: 'Владение мячем %',
     type: 'team',
-    perMatch: false
+    perMatch: false,
   },
   {
     name: 'bigChancesCreatedAgainst',
     nameRu: 'Допущено моментов',
     type: 'defence',
-    perMatch: true
+    perMatch: true,
   },
   {
     name: 'cleanSheets',
     nameRu: 'Сухие матчи',
     type: 'defence',
-    perMatch: false
+    perMatch: false,
   },
   {
     name: 'duelsWonPercentage',
     nameRu: 'Выигранные дуэли %',
     type: 'defence',
-    perMatch: false
+    perMatch: false,
   },
   {
     name: 'shots',
     nameRu: 'Удары',
     type: 'attack',
-    perMatch: true
+    perMatch: true,
   },
   {
     name: 'shotsAgainst',
     nameRu: 'Допущено ударов',
     type: 'defence',
-    perMatch: true
+    perMatch: true,
   },
   {
     name: 'tackles',
     nameRu: 'Отборы',
     type: 'defence',
-    perMatch: true
+    perMatch: true,
   },
   {
     name: 'yellowCards',
     nameRu: 'Желтые карточки',
     type: 'discipline',
-    perMatch: true
+    perMatch: true,
   },
   {
     name: 'dribbleAttempts',
     nameRu: 'Попытки дриблинга',
     type: 'attack',
-    perMatch: true
+    perMatch: true,
   },
   {
     name: 'accuratePassesPercentage',
     nameRu: 'Точность передач',
     type: 'team',
-    perMatch: false
+    perMatch: false,
   },
   {
     name: 'goalsFromInsideTheBox',
     nameRu: 'Голы из штрафной',
     type: 'attack',
-    perMatch: true
+    perMatch: true,
   },
   {
     name: 'goalsFromOutsideTheBox',
     nameRu: 'Голы из-за штрафной',
     type: 'attack',
-    perMatch: false
+    perMatch: false,
   },
   {
     name: 'shotsOnTarget',
     nameRu: 'Удары в створ',
     type: 'attack',
-    perMatch: true
+    perMatch: true,
   },
   {
     name: 'totalCrosses',
     nameRu: 'Кроссы',
     type: 'team',
-    perMatch: true
+    perMatch: true,
   },
 
 ];
@@ -253,5 +261,49 @@ export const teamCharts = [
     typeRu: 'Взимодействие',
     initOpt: 'averageBallPossession'
   },
+];
 
+export const cups = [
+  {
+    name: 'Лига Чемпионов',
+    amount: 6,
+    logo: clcup,
+    class: ' trophies__img_black'
+  },
+  {
+    name: 'Чемпионат Англии',
+    amount: 19,
+    logo: plcup,
+    class: ''
+  },
+  {
+    name: 'Кубок Англии',
+    amount: 8,
+    logo: facup,
+    class: ' trophies__img_black'
+  },
+  {
+    name: 'Кубок Лиги',
+    amount: 9,
+    logo: leaguecup,
+    class: ' trophies__img_small'
+  },
+  {
+    name: 'Кубок УЕФА',
+    amount: 3,
+    logo: uefacup,
+    class: ''
+  },
+  {
+    name: 'Суперкубок УЕФА',
+    amount: 4,
+    logo: ueafs,
+    class: ''
+  },
+  {
+    name: 'Клубный ЧМ',
+    amount: 1,
+    logo: fifa,
+    class: ''
+  },
 ];
