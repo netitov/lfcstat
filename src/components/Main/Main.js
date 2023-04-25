@@ -5,6 +5,7 @@ import Navigation from '../Navigation/Navigation';
 import NewsList from '../NewsList/NewsList';
 import Promo from '../Promo/Promo';
 import Trophies from '../Trophies/Trophies';
+import Videos from '../Videos/Videos';
 
 function Main(props) {
   return (
@@ -32,6 +33,7 @@ function Main(props) {
       <NewsList
         news={props.news}
       />
+      <Videos videos={props.videos}/>
       <Trophies />
     </main>
   );

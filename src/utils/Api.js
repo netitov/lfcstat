@@ -39,6 +39,13 @@ export default class Api {
     .then(this._checkServerResponse);
   }
 
+  getVideos() {
+    return fetch(`${this._url}/videos`, {
+      headers: {'Content-Type': 'application/json'}
+    })
+    .then(this._checkServerResponse);
+  }
+
 
 
 }

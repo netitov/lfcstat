@@ -24,6 +24,7 @@ function App() {
   const [finishedEvents, setFinishedEvents] = useState([]);
   const [news, setNews] = useState([]);
   const [teamCharts, setTeamCharts] = useState([]);
+  const [videos, setVideos] = useState([]);
 
   const initAtOpt = 'goalsScored';
 
@@ -44,9 +45,10 @@ function App() {
       api.getStandings(),
       api.getEvents(),
       api.getNews(),
-      api.getTeamStats()
+      api.getTeamStats(),
+      api.getVideos()
     ])
-    .then(([st, evts, nws, ts]) => {
+    .then(([st, evts, nws, ts, vd]) => {
       //whole standings data
       localStorage.setItem('standings', JSON.stringify(st));
       const sortedStandings = st.sort((a,b) => a.position - b.position);
@@ -88,6 +90,10 @@ function App() {
       //team stats for charts
       const sortedTs = ts.sort((a, b) => a.year.localeCompare(b.year));
       setTeamCharts(sortedTs);
+
+      //videos
+      setVideos(vd.slice(0, 4));
+      console.log(vd)
     })
     .catch((err) => {
       console.log(err);
@@ -116,6 +122,7 @@ function App() {
                 standingsHeader={standingsHeaderShort}
                 news={news}
                 data={standings.find((i) => i.teamName === mainTeam)}
+                videos={videos}
               />
             }
           />
