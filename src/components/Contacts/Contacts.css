@@ -1,0 +1,22 @@
+.contacts {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.contacts__link {
+  transition: var(--transition);
+  display: block;
+  opacity: 0.6;
+}
+
+.contacts__link > svg {
+  width: 35px;
+  height: 35px;
+}
+
+.contacts__link:hover {
+  opacity: 1;
+}
+

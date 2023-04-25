@@ -11,6 +11,7 @@ import ChartsList from '../ChartsList/ChartsList';
 import Chart from "chart.js/auto";
 import { CategoryScale } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import Footer from '../Footer/Footer';
 
 Chart.register(CategoryScale);
 Chart.register(ChartDataLabels);
@@ -148,6 +149,8 @@ function App() {
           />
 
         </Routes>
+
+        <Footer />
 
       </div>
     </div>

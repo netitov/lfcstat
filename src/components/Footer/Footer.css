@@ -1,0 +1,37 @@
+.footer {
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+}
+
+.footer > a {
+  position: absolute;
+  right: 0;
+  opacity: 0.4;
+  transition: var(--transition);
+}
+
+.footer > a:hover {
+  opacity: 1;
+  color: #fff;
+}
+
+@media (max-width: 780px) {
+  .footer > p {
+    display: none;
+  }
+}
+
+@media (max-width: 580px) {
+  .footer > a {
+    right: auto;
+    bottom: 25px;
+  }
+
+  .footer {
+    padding-bottom: 60px;
+  }
+}
