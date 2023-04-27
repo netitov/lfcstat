@@ -1,6 +1,6 @@
 import React from 'react';
 import LeagueTableRow from './LeagueTableRow';
-import LeagueTableHeader from './LeagueTableHeader';
+import TableHeader from './TableHeader';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ function LeagueTable(props) {
           <tr className="table__head-row">
             {props.standingsHeader.map((i) => {
               return (
-                <LeagueTableHeader
+                <TableHeader
                   title={i[1]}
                   name={i[0]}
                   key={i[0]}

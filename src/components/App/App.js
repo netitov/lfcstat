@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import dayjs from 'dayjs';
 import Api from '../../utils/Api';
@@ -12,12 +12,16 @@ import Chart from "chart.js/auto";
 import { CategoryScale } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import Footer from '../Footer/Footer';
+import PlayersTable from '../PlayersTable/PlayersTable';
 
 Chart.register(CategoryScale);
 Chart.register(ChartDataLabels);
 Chart.defaults.font.family = 'Century Gothic, Arial, Helvetica, Sans-serif';
 
+
+
 function App() {
+
 
   const [standings, setStandings] = useState([]);
   const [shortStandings, setShortStandings] = useState([]);
@@ -26,7 +30,10 @@ function App() {
   const [news, setNews] = useState([]);
   const [teamCharts, setTeamCharts] = useState([]);
   const [videos, setVideos] = useState([]);
+  const [playerStats, setPlayerStats] = useState([]);
 
+
+  let playerStatsArr = [];
   const initAtOpt = 'goalsScored';
 
   const api = new Api ({
@@ -41,15 +48,16 @@ function App() {
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     Promise.all([
       api.getStandings(),
       api.getEvents(),
       api.getNews(),
       api.getTeamStats(),
-      api.getVideos()
+      api.getVideos(),
+      api.getPlayerStats()
     ])
-    .then(([st, evts, nws, ts, vd]) => {
+    .then(([st, evts, nws, ts, vd, ps]) => {
       //whole standings data
       localStorage.setItem('standings', JSON.stringify(st));
       const sortedStandings = st.sort((a,b) => a.position - b.position);
@@ -94,12 +102,32 @@ function App() {
 
       //videos
       setVideos(vd.slice(0, 4));
-      console.log(vd)
+
+      //player stats: adapt array for mapping
+      transfromArray(ps[0].data);
+      setPlayerStats(playerStatsArr);
+
     })
     .catch((err) => {
       console.log(err);
     })
   }, [])
+
+  function transfromArray(initArr) {
+    Object.entries(initArr).forEach((arr) => {
+      arr[1].forEach((i) => {
+        if (!playerStatsArr.find((el) => el.name === i.player.name)) {
+          playerStatsArr.push({ name: i.player.name, appearances: i.statistics.appearances });
+        }
+        const indexOfItemInArray = playerStatsArr.findIndex(q => q.name === i.player.name);
+        if (indexOfItemInArray > -1) {
+          playerStatsArr[indexOfItemInArray] = {...playerStatsArr[indexOfItemInArray], [arr[0]]: i.statistics[arr[0]]};
+        }
+      })
+    })
+  }
+
+
 
   function test() {
     //console.log(teamCharts)
@@ -144,6 +172,15 @@ function App() {
               <ChartsList
                 initOption={initAtOpt}
                 teamCharts={teamCharts}
+              />
+            }
+          />
+
+          <Route
+            path="/players-stats"
+            element={
+              <PlayersTable
+                data={playerStats}
               />
             }
           />

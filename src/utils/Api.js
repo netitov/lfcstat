@@ -46,6 +46,13 @@ export default class Api {
     .then(this._checkServerResponse);
   }
 
+  getPlayerStats() {
+    return fetch(`${this._url}/player-stats`, {
+      headers: {'Content-Type': 'application/json'}
+    })
+    .then(this._checkServerResponse);
+  }
+
 
 
 }

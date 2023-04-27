@@ -46,7 +46,7 @@ export const navBtns = [
   {
     icon: <BsFillPersonFill size={30}/>,
     title: 'Статистика игроков',
-    route: '/stats/players'
+    route: '/players-stats'
   },
   {
     icon: <BsPeopleFill size={30}/>,
@@ -63,29 +63,6 @@ export const navBtns = [
     title: 'Графики',
     route: '/charts'
   },
-];
-
-export const newsPic = [
-  'https://images.unsplash.com/photo-1654886357555-58f98333f119?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
-  'https://images.unsplash.com/photo-1677752793570-acb0b3c54542?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
-  'https://images.unsplash.com/photo-1636959961919-985cbee8d6d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80',
-  'https://images.unsplash.com/photo-1593296402507-fe73d47e2d8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-  'https://images.unsplash.com/photo-1598556253518-16614526b8dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80',
-  'https://images.unsplash.com/photo-1518188049456-7a3a9e263ab2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
-  'https://images.unsplash.com/photo-1643796903573-68834ffadcb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-  'https://images.unsplash.com/photo-1604160701095-c45e92c644a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=390&q=80',
-  'https://images.unsplash.com/photo-1654886474229-46687f2a1ad4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-  'https://images.unsplash.com/photo-1559930198-26e8d7f0a4f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-  'https://images.unsplash.com/photo-1478112544096-20cf77df3a88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-  'https://images.unsplash.com/photo-1654886580603-7c9a6e4bdc25?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
-  'https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  'https://media.gettyimages.com/id/1257837862/photo/liverpool-fc-v-chelsea-fc-premier-league.jpg?s=2048x2048&w=gi&k=20&c=ESmD01XiusMhOei5N0G_j8d-NNBgajcvgoreAMnqMCc=',
-  'https://media.gettyimages.com/id/1391292917/photo/liverpool-fc-v-sl-benfica-quarter-final-leg-two-uefa-champions-league.jpg?s=2048x2048&w=gi&k=20&c=1rwxu9krIam6WHRv8svv8N8fhnJdIMxUHbSFtwvyWtg=',
-  'https://media.gettyimages.com/id/1440972485/photo/liverpool-fc-v-southampton-fc-premier-league.jpg?s=2048x2048&w=gi&k=20&c=wow7JoU5odNx9yEgb5-yrI2u9gu8Fed6qCedLp5TkCw=',
-  'https://media.gettyimages.com/id/1438209109/photo/liverpool-fc-v-ssc-napoli-group-a-uefa-champions-league.jpg?s=2048x2048&w=gi&k=20&c=2WFm9ypUAeso3JQLtStbl05oWxGfpE1Z38Y0m4YRPXk=',
-  'https://media.gettyimages.com/id/1433906472/photo/liverpool-fc-v-manchester-city-premier-league.jpg?s=2048x2048&w=gi&k=20&c=E807-TmSSatxZyt6HiYnQil-KSRmE0Yh9Dy3E8yMxsU=',
-  'https://media.gettyimages.com/id/1227741500/photo/fans-celebrate-as-liverpool-fc-lift-the-premiership-trophy-at-anfield.jpg?s=2048x2048&w=gi&k=20&c=uLEsO35fTiBLgSt47chiiNbxnEc1POgK9rEYJdYE7JM=',
-  'https://media.gettyimages.com/id/1211976153/photo/liverpool-fc-v-atletico-madrid-uefa-champions-league-round-of-16-second-leg.jpg?s=2048x2048&w=gi&k=20&c=GWAxrb1g7fhbP3Id2XhrRIJOxOs1TUagUa7o34MK3p4='
 ];
 
 export const sources = [
@@ -119,8 +96,6 @@ export const sources = [
   },
 
 ];
-
-export const promoImg = 'https://images.unsplash.com/photo-1643796903573-68834ffadcb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80';
 
 export const tsOptions = [
   {
@@ -305,5 +280,200 @@ export const cups = [
     amount: 1,
     logo: fifa,
     class: ''
+  },
+];
+
+
+
+export const playersTableData = [
+  {
+    name: 'position',
+    nameRu: '№',
+    short: '№',
+    include: true,
+    type: 'Другое'
+  },
+  {
+    name: 'player',
+    nameRu: 'Игрок',
+    short: 'Игрок',
+    include: true,
+    type: 'Другое'
+  },
+  {
+    name: 'appearances',
+    nameRu: 'Матчи',
+    short: 'Матчи',
+    include: true,
+    type: 'Общее'
+  },
+  {
+    name: 'goals',
+    nameRu: 'Забито мячей',
+    short: 'Голы',
+    include: true,
+    type: 'Атака'
+  },
+  {
+    name: 'assists',
+    nameRu: 'Ассисты',
+    short: 'Асс',
+    include: true,
+    type: 'Атака'
+  },
+  {
+    name: 'expectedGoals',
+    nameRu: 'Ожидамые голы',
+    short: 'ОжГолы',
+    include: false,
+    type: 'Атака'
+  },
+
+  {
+    name: 'expectedAssists',
+    nameRu: 'Ожидаемые ассисты',
+    short: 'ОжАссисты',
+    include: false,
+    type: 'Атака'
+  },
+  {
+    name: 'goalsAssistsSum',
+    nameRu: 'Голы + ассисты',
+    short: 'Г+А',
+    include: true,
+    type: 'Атака'
+  },
+  {
+    name: 'bigChancesCreated',
+    nameRu: 'Создано опасных моментов',
+    short: 'СОМ',
+    include: true,
+    type: 'Атака'
+  },
+  {
+    name: 'keyPasses',
+    nameRu: 'Ключевые передачи',
+    short: 'КлПер',
+    include: true,
+    type: 'Атака'
+  },
+  {
+    name: 'tackles',
+    nameRu: 'Отборы',
+    short: 'Отб',
+    include: true,
+    type: 'Оборона'
+  },
+  {
+    name: 'interceptions',
+    nameRu: 'Перехваты',
+    short: 'Перехв',
+    include: true,
+    type: 'Оборона'
+  },
+  {
+    name: 'penaltyGoals',
+    nameRu: 'Голы с пенальти',
+    short: 'ГП',
+    include: false,
+    type: 'Атака'
+  },
+  {
+    name: 'freeKickGoal',
+    nameRu: 'Голы со штрафных',
+    short: 'ГШ',
+    include: false,
+    type: 'Атака'
+  },
+  {
+    name: 'rating',
+    nameRu: 'Рейтинг',
+    short: 'Р',
+    include: false,
+    type: 'Общее'
+  },
+  {
+    name: 'scoringFrequency',
+    nameRu: 'Частота голов',
+    short: 'ЧМ',
+    include: false,
+    type: 'Атака'
+  },
+  {
+    name: 'totalShots',
+    nameRu: 'Всего ударов',
+    short: 'У',
+    include: false,
+    type: 'Атака'
+  },
+  {
+    name: 'shotsOnTarget',
+    nameRu: 'Удары в створ',
+    short: 'УС',
+    include: false,
+    type: 'Атака'
+  },
+  {
+    name: 'bigChancesMissed',
+    nameRu: 'Упущено опасных моментов',
+    short: 'УОМ',
+    include: false,
+    type: 'Атака'
+  },
+  {
+    name: 'accuratePasses',
+    nameRu: 'Точные передачи',
+    short: 'П',
+    include: false,
+    type: 'Взаимодействие'
+  },
+  {
+    name: 'accurateLongBalls',
+    nameRu: 'Точные длинные передачи',
+    short: 'ДП',
+    include: false,
+    type: 'Взаимодействие'
+  },
+  {
+    name: 'successfulDribbles',
+    nameRu: 'Успешный дриблинг',
+    short: 'УД',
+    include: false,
+    type: 'Атака'
+  },
+  {
+    name: 'penaltyWon',
+    nameRu: 'Взято пенальти',
+    short: 'ВП',
+    include: false,
+    type: 'Атака'
+  },
+  {
+    name: 'clearances',
+    nameRu: 'Чистые матчи',
+    short: 'БезПр',
+    include: false,
+    type: 'Оборона'
+  },
+  {
+    name: 'Потери владения',
+    nameRu: 'Рейтинг',
+    short: 'ПотВл',
+    include: false,
+    type: 'Оборона'
+  },
+  {
+    name: 'yellowCards',
+    nameRu: 'Желтые карточки',
+    short: 'ЖК',
+    include: false,
+    type: 'Дисциплина'
+  },
+  {
+    name: 'redCards',
+    nameRu: 'Красные карточки',
+    short: 'КК',
+    include: false,
+    type: 'Дисциплина'
   },
 ];
