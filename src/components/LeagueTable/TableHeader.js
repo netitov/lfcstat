@@ -1,21 +1,16 @@
 import React from 'react';
-//import sortingLogo from '../../images/icons8-сортировка-по-возрастанию-48.png';
-
 
 function TableHeader(props) {
 
-  /* const isLiked = props.activeColumns.some(i => i === props.value); */
-  /* const sortLogoClass = isLiked ? 'table__sort-logo table__sort-logo_active' : 'table__sort-logo'; */
+  const cellClass = props.sorted === props.id ? ' table__header-cell_active' : '';
 
   function handleSorting(e) {
-    if (e.target.dataset.title !== 'date') {
-      props.onThClick(e.target);
-    }
+    props.onSortClick(e.target.dataset.id);
   }
 
   return (
-    <th onClick={handleSorting} data-title={props.title}
-      colSpan={props.name === 'Команда' ? 2 : 1}>{props.name}
+    <th onClick={handleSorting} title={props.title} data-id={props.id} colSpan={props.name === 'Команда' ? 2 : 1}
+      className={`table__header-cell${cellClass}`}>{props.name}
     </th>
   );
 }

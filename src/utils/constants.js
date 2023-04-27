@@ -294,7 +294,7 @@ export const playersTableData = [
     type: 'Другое'
   },
   {
-    name: 'player',
+    name: 'name',
     nameRu: 'Игрок',
     short: 'Игрок',
     include: true,
@@ -388,8 +388,8 @@ export const playersTableData = [
   {
     name: 'rating',
     nameRu: 'Рейтинг',
-    short: 'Р',
-    include: false,
+    short: 'Рейт',
+    include: true,
     type: 'Общее'
   },
   {

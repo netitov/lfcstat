@@ -34,16 +34,32 @@
   padding: var(--padding-table);
   background: var(--second-grey);
   border-radius: var(--radius-table);
-  border-spacing: 0px 1px;
+  border-spacing: 0;
   margin: 30px auto;
 }
 
 .table__head-row {
   height: 30px;
+  position: sticky;
+  top: 0;
+  background: #272727d9;
 }
 
-.table__head-row > th {
+.table__header-cell {
   min-width: 35px;
+  transition: var(--transition);
+}
+
+.table__header-cell:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #fff;
+}
+
+.table__header-cell_active {
+  text-decoration: underline;
+  color: #fff;
+  padding-bottom: 5px;
 }
 
 .table__head-row > .table__head-cell_wide {
@@ -65,6 +81,9 @@
 
 .table__row .table__row_main {
   background: #535353;
+}
+.table__data_active {
+  background-color: #c8102e1a;
 }
 
 .table__logo {

@@ -4,8 +4,6 @@ import { playersTableData } from '../../utils/constants';
 
 function PlayersTable(props) {
 
-  //console.log(props.data)
-
   return (
     <div className="">
       <table className="table players-table">
@@ -16,6 +14,10 @@ function PlayersTable(props) {
                 <TableHeader
                   name={i.short}
                   key={i.name}
+                  id={i.name}
+                  title={i.nameRu}
+                  onSortClick={props.sortTable}
+                  sorted={props.sorted}
                 />
               )
             })}
@@ -28,15 +30,17 @@ function PlayersTable(props) {
               <PlayersTableRow
                 key={i.name}
                 position={props.data.indexOf(i) + 1}
-                player={i.name || 0}
-                appearances={i.appearances || 0}
-                goals={i.goals || 0}
-                assists={i.assists || 0}
-                goalsAssistsSum={i.goalsAssistsSum || 0}
-                bigChancesCreated={i.bigChancesCreated || 0}
-                keyPasses={i.keyPasses || 0}
-                tackles={i.tackles || 0}
-                interceptions={i.interceptions || 0}
+                player={i.name}
+                appearances={i.appearances}
+                goals={i.goals}
+                assists={i.assists}
+                goalsAssistsSum={i.goalsAssistsSum}
+                bigChancesCreated={i.bigChancesCreated}
+                keyPasses={i.keyPasses}
+                tackles={i.tackles}
+                interceptions={i.interceptions}
+                rating={i.rating.toFixed(1)}
+                sorted={props.sorted}
               />
             )
           })}
