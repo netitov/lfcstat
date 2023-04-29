@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Chart from '../Chart/Chart';
 import Switcher from '../Switcher/Switcher';
-import { tsOptions, teamCharts } from '../../utils/constants';
+import { tsOptions, teamCharts, tournaments } from '../../utils/constants';
 
 function ChartsList(props) {
 
-  const [activeBtn, setActiveBtn] = useState('Premier League');
+  const [activeBtn, setActiveBtn] = useState(tournaments.find((i) => i.default).nameRu);
   const filteredStats = props.teamCharts.filter((i) => i.tournament === activeBtn);
 
   function handleSwitch(data) {
@@ -16,6 +16,8 @@ function ChartsList(props) {
     <div className="chart-list">
       <Switcher
         handleSwitch={handleSwitch}
+        btns={tournaments}
+        activeBtn={activeBtn}
       />
       <div className="chart-list__container">
         {teamCharts.map((i) => {

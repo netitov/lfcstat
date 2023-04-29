@@ -477,3 +477,29 @@ export const playersTableData = [
     type: 'Дисциплина'
   },
 ];
+
+export const tournaments = [
+  {
+    name: 'Premier League',
+    nameRu: 'Premier League',
+    default: true
+  },
+  {
+    name: 'UEFA Champions League',
+    nameRu: 'UEFA Champions League',
+    default: false
+  }
+];
+
+export const statsGameFilter = [
+  {
+    name: 'overall',
+    nameRu: 'общие данные',
+    default: true
+  },
+  {
+    name: 'per game',
+    nameRu: 'за матч',
+    default: false
+  }
+];

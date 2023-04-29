@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import dayjs from 'dayjs';
 import Api from '../../utils/Api';
 import { SERVER_API } from '../../utils/config';
-import { standingsHeader, standingsHeaderShort, gamesToShow, standingsLimit, mainTeam } from '../../utils/constants';
+import { standingsHeader, standingsHeaderShort, gamesToShow, standingsLimit, mainTeam, statsGameFilter } from '../../utils/constants';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import LeagueTable from '../LeagueTable/LeagueTable';
@@ -13,6 +13,7 @@ import { CategoryScale } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import Footer from '../Footer/Footer';
 import PlayersTable from '../PlayersTable/PlayersTable';
+import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
 Chart.register(CategoryScale);
 Chart.register(ChartDataLabels);
@@ -29,7 +30,9 @@ function App() {
   const [videos, setVideos] = useState([]);
   const [playerStats, setPlayerStats] = useState([]);
   const [sorted, setSorted] = useState('rating');
-  const [order, setOrder] = useState('asc');
+  const [order, setOrder] = useState('dsc');
+  const [activeBtn, setActiveBtn] = useState(statsGameFilter.find((i) => i.default).nameRu);
+  const [sortedPlStats, setSortedPlStats] = useState([]);
 
 
   let playerStatsArr = [];
@@ -102,15 +105,17 @@ function App() {
       //videos
       setVideos(vd.slice(0, 4));
 
-      //player stats: adapt array for mapping
+      //player stats:
       transfromArray(ps[0].data, playerStatsArr);
       setPlayerStats(playerStatsArr);
+      setSortedPlStats(playerStatsArr);
     })
     .catch((err) => {
       console.log(err);
     })
   }, [])
 
+  //adapt array from server to mapping
   function transfromArray(initArr, newArr) {
     Object.entries(initArr).forEach((arr) => {
       arr[1].forEach((i) => {
@@ -125,10 +130,10 @@ function App() {
 
       })
     })
-    //add missing keys
     compareObjects(newArr, initArr);
   }
 
+  //add missing keys: so that all players have the same keys
   function compareObjects(arr1, arr2) {
     arr1.forEach((i) => {
       const objKeys = Object.keys(i);
@@ -140,11 +145,11 @@ function App() {
     })
   }
 
-  function sortTable(data) {
-
+  //sort players stats table
+  function sortTable(data, switched) {
     const selectColumn = (a,b) => {
 
-      if (order === 'asc' || sorted !== data) {
+      if (((order === 'asc' || sorted !== data) && !switched) || (order === 'dsc' && switched)) {
         setOrder('dsc');
         if (typeof(playerStats[0][data]) === 'string') {
           return a[data] > b[data] ? 1 : -1;
@@ -153,7 +158,7 @@ function App() {
         }
       }
 
-      if (order === 'dsc' || sorted === data) {
+      if (order === 'dsc' || (order === 'asc' && switched)) {
         setOrder('asc');
         if (typeof(playerStats[0][data]) === 'string') {
           return b[data] > a[data] ? 1 : -1;
@@ -162,18 +167,46 @@ function App() {
         }
       }
     }
-
-
-    setPlayerStats([...playerStats.sort((a, b) => selectColumn(a,b))]);
+    setSortedPlStats([...sortedPlStats.sort((a, b) => selectColumn(a,b))]);
     setSorted(data);
   }
 
-  function test() {
-    //console.log(teamCharts)
+  //switch players table type: overall/ pergame
+  function handleSwitch(btn) {
+    setActiveBtn(btn);
+    switchPlayerStats(btn);
   }
 
+  function switchPlayerStats(btn) {
+    if(btn === 'за матч') {
+
+      let newArr = [];
+
+      playerStats.forEach((i) => {
+        newArr.push({...i})
+      })
+
+      newArr.forEach((i) => {
+        for (let key in i) {
+          if (key !== 'name' && key !== 'appearances' && key !== 'rating' && key !== '№') {
+            let newValue = Number((i[key] / i.appearances).toFixed(2));
+            i[key] = newValue
+          }
+        }
+      })
+      setSortedPlStats(newArr);
+    } else {
+      setSortedPlStats(playerStats);
+    }
+  }
+
+  //sort players stats table if active btn is switched
+  useEffect(() => {
+    sortTable(sorted, true);
+  }, [activeBtn])
+
   return (
-    <div className="page" onClick={test}>
+    <div className="page" /* onClick={test} */>
       <div className="page__container">
         <Header />
         <Routes>
@@ -217,12 +250,15 @@ function App() {
             path="/players-stats"
             element={
               <PlayersTable
-                data={playerStats}
                 sortTable={sortTable}
                 sorted={sorted}
+                handleSwitch={handleSwitch}
+                activeBtn={activeBtn}
+                dataArr={sortedPlStats}
               />
             }
           />
+
 
         </Routes>
 
