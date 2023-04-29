@@ -1,6 +1,6 @@
 .card {
-  width: 200px;
-  height: 110px;
+  width: 220px;
+  height: 125px;
   background: #272727;
   border-radius: var(--radius-table);
   transition: var(--transition);

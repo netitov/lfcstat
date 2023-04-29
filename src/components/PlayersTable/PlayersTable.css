@@ -3,14 +3,27 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin: 30px 0 var(--main-gap);
+  margin: var(--top-gap) 0 var(--main-gap);
+  gap: 25px;
 }
 
 .players-table {
 
 }
 
+.players-table__header-cell_active {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #fff;
+}
+
+.players-table__header-cell:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #fff;
+}
+
 .players-table__head-row > th {
   min-width: 55px;
-  font-size: 13px;
+  /* font-size: 13px; */
 }

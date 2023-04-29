@@ -1,46 +1,9 @@
-import { useState, useEffect } from 'react';
-import TableHeader from '../LeagueTable/TableHeader';
+import PlayersTableHeader from './PlayersTableHeader';
 import PlayersTableRow from './PlayersTableRow';
 import { playersTableData, statsGameFilter } from '../../utils/constants';
 import Switcher from '../Switcher/Switcher';
 
 function PlayersTable(props) {
-
-  /* const [activeBtn, setActiveBtn] = useState(statsGameFilter.find((i) => i.default).nameRu);
-  const [dataArr, setDataArr] = useState([]);
-
-  useEffect(() => {
-    setDataArr(props.data);
-  }, [props.data])
-
-  function handleSwitch(btn) {
-    setActiveBtn(btn);
-    testino(btn);
-  }
-
-  function testino(btn) {
-    if(btn === 'за матч') {
-
-      let newArr = [];
-
-      props.data.forEach((i) => {
-        newArr.push({...i})
-      })
-
-      newArr.forEach((i) => {
-        for (let key in i) {
-          if (key !== 'name' && key !== 'appearances' && key !== 'rating' && key !== '№') {
-            let newValue = Number((i[key] / i.appearances).toFixed(2));
-            i[key] = newValue
-          }
-        }
-      })
-      setDataArr(newArr);
-    } else {
-      setDataArr(props.data);
-    }
-
-  } */
 
   return (
     <div className="table-container">
@@ -54,7 +17,7 @@ function PlayersTable(props) {
           <tr className="table__head-row players-table__head-row">
             {playersTableData.filter((i) => i.include).map((i) => {
               return (
-                <TableHeader
+                <PlayersTableHeader
                   name={i.short}
                   key={i.name}
                   id={i.name}

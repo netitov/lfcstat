@@ -11,6 +11,7 @@
   --main-font: 14px;
   --transition: all 0.3s;
   --main-gap: 55px;
+  --top-gap: 25px;
 }
 
 .page {

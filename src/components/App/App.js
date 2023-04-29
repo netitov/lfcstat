@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import dayjs from 'dayjs';
 import Api from '../../utils/Api';
 import { SERVER_API } from '../../utils/config';
-import { standingsHeader, standingsHeaderShort, gamesToShow, standingsLimit, mainTeam, statsGameFilter } from '../../utils/constants';
+import { standingsHeader, gamesToShow, standingsLimit, mainTeam, statsGameFilter } from '../../utils/constants';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import LeagueTable from '../LeagueTable/LeagueTable';
@@ -13,7 +13,6 @@ import { CategoryScale } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import Footer from '../Footer/Footer';
 import PlayersTable from '../PlayersTable/PlayersTable';
-import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
 Chart.register(CategoryScale);
 Chart.register(ChartDataLabels);
@@ -29,7 +28,8 @@ function App() {
   const [teamCharts, setTeamCharts] = useState([]);
   const [videos, setVideos] = useState([]);
   const [playerStats, setPlayerStats] = useState([]);
-  const [sorted, setSorted] = useState('rating');
+  const [sortedColumnPl, setSortedColumnPl] = useState('rating');
+  const [sortedColumnLeague, setSortedColumnLeague] = useState('№');
   const [order, setOrder] = useState('dsc');
   const [activeBtn, setActiveBtn] = useState(statsGameFilter.find((i) => i.default).nameRu);
   const [sortedPlStats, setSortedPlStats] = useState([]);
@@ -145,11 +145,16 @@ function App() {
     })
   }
 
+  function sortLeagueTable(data) {
+    setStandings([...standings.sort((a, b) => b[data] - a[data])]);
+    setSortedColumnLeague(data);
+  }
+
   //sort players stats table
-  function sortTable(data, switched) {
+  function sortPlayersTable(data, switched) {
     const selectColumn = (a,b) => {
 
-      if (((order === 'asc' || sorted !== data) && !switched) || (order === 'dsc' && switched)) {
+      if (((order === 'asc' || sortedColumnPl !== data) && !switched) || (order === 'dsc' && switched)) {
         setOrder('dsc');
         if (typeof(playerStats[0][data]) === 'string') {
           return a[data] > b[data] ? 1 : -1;
@@ -168,7 +173,7 @@ function App() {
       }
     }
     setSortedPlStats([...sortedPlStats.sort((a, b) => selectColumn(a,b))]);
-    setSorted(data);
+    setSortedColumnPl(data);
   }
 
   //switch players table type: overall/ pergame
@@ -202,7 +207,7 @@ function App() {
 
   //sort players stats table if active btn is switched
   useEffect(() => {
-    sortTable(sorted, true);
+    sortPlayersTable(sortedColumnPl, true);
   }, [activeBtn])
 
   return (
@@ -218,7 +223,7 @@ function App() {
                 standings={shortStandings}
                 events={nearEvents}
                 finishedEvents={finishedEvents}
-                standingsHeader={standingsHeaderShort}
+                standingsHeader={standingsHeader.filter((i) => i.shortTable)}
                 news={news}
                 data={standings.find((i) => i.teamName === mainTeam)}
                 videos={videos}
@@ -230,8 +235,10 @@ function App() {
             path="/standings"
             element={
               <LeagueTable
-                standings={standings}
                 standingsHeader={standingsHeader}
+                standings={standings}
+                sortTable={sortLeagueTable}
+                sorted={sortedColumnLeague}
               />
             }
           />
@@ -250,8 +257,8 @@ function App() {
             path="/players-stats"
             element={
               <PlayersTable
-                sortTable={sortTable}
-                sorted={sorted}
+                sortTable={sortPlayersTable}
+                sorted={sortedColumnPl}
                 handleSwitch={handleSwitch}
                 activeBtn={activeBtn}
                 dataArr={sortedPlStats}

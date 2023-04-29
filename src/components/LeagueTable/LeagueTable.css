@@ -11,6 +11,10 @@
   font-size: var(--header-font);
 }
 
+.standings__heading-container_inactive {
+  display: none;
+}
+
 .standings__link {
   color: var(--light-grey);
   transition: var(--transition);
@@ -27,7 +31,8 @@
 .standings_whole {
   display: flex;
   flex-direction: column;
-  width: 65%;
+  width: 70%;
+  margin: var(--top-gap) auto var(--main-gap);
 }
 
 .table {
@@ -48,19 +53,18 @@
 .table__header-cell {
   min-width: 35px;
   transition: var(--transition);
+  font-size: 13px;
 }
 
-.table__header-cell:hover {
-  text-decoration: underline;
-  cursor: pointer;
-  color: #fff;
+/* .table__header-cell:hover {
+
 }
 
 .table__header-cell_active {
   text-decoration: underline;
   color: #fff;
   padding-bottom: 5px;
-}
+} */
 
 .table__head-row > .table__head-cell_wide {
   min-width: 150px;

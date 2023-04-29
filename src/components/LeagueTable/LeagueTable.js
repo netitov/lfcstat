@@ -1,6 +1,6 @@
 import React from 'react';
 import LeagueTableRow from './LeagueTableRow';
-import TableHeader from './TableHeader';
+import LeagueTableHeader from './LeagueTableHeader';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
@@ -9,24 +9,27 @@ function LeagueTable(props) {
 
   //hide colums from main page
   const location = useLocation().pathname;
-  const linkClass = location === '/standings' ? ' standings__link_inactive' : '';
   const tableClass = location === '/standings' ? ' standings_whole' : '';
+  const headingClass = location === '/standings' ? ' standings__heading-container_inactive' : '';
 
   return (
     <div className={`standings${tableClass}`}>
-      <div className="standings__heading-container">
+      <div className={`standings__heading-container${headingClass}`}>
         <h2 className="standings__heading">Таблица АПЛ</h2>
-        <Link to="/standings" className={`standings__link${linkClass}`}>Подробнее</Link>
+        <Link to="/standings" className="standings__link">Подробнее</Link>
       </div>
       <table className="standings__table table">
         <thead>
           <tr className="table__head-row">
             {props.standingsHeader.map((i) => {
               return (
-                <TableHeader
-                  title={i[1]}
-                  name={i[0]}
-                  key={i[0]}
+                <LeagueTableHeader
+                  name={i.short}
+                  key={i.name}
+                  id={i.name}
+                  title={i.nameRu}
+                  onSortClick={props.sortTable}
+                  sorted={props.sorted}
                 />
               )
             })}

@@ -16,24 +16,66 @@ import ueafs from '../images/uefa_super_cup.png';
 import fifa from '../images/fifa.png';
 
 export const standingsHeader = [
-  ['№', 'Номер'],
-  ['Команда', 'Команда'],
-  ['М', 'Матчи'],
-  ['В', 'Выигрыши'],
-  ['Н', 'Ничьи'],
-  ['П', 'Поражения'],
-  ['ЗМ', 'Забито мячей'],
-  ['ПМ', 'Пропущено мячей'],
-  ['РМ', 'Разница'],
-  ['О', 'Очки']
-];
-
-export const standingsHeaderShort = [
-  ['№', 'Номер'],
-  ['Команда', 'Команда'],
-  ['М', 'Матчи'],
-  ['РМ', 'Разница'],
-  ['О', 'Очки']
+  {
+    name: 'position',
+    nameRu: 'Номер',
+    short: '№',
+    shortTable: true
+  },
+  {
+    name: 'teamName',
+    nameRu: 'Команда',
+    short: 'Команда',
+    shortTable: true
+  },
+  {
+    name: 'matches',
+    nameRu: 'Матчи',
+    short: 'М',
+    shortTable: true
+  },
+  {
+    name: 'wins',
+    nameRu: 'Выигрыши',
+    short: 'В',
+    shortTable: false
+  },
+  {
+    name: 'draws',
+    nameRu: 'Ничьи',
+    short: 'Н',
+    shortTable: false
+  },
+  {
+    name: 'losses',
+    nameRu: 'Поражения',
+    short: 'П',
+    shortTable: false
+  },
+  {
+    name: 'goalsSc',
+    nameRu: 'Забито мячей',
+    short: 'ЗМ',
+    shortTable: false
+  },
+  {
+    name: 'goalsCon',
+    nameRu: 'Пропущено мячей',
+    short: 'ПМ',
+    shortTable: false
+  },
+  {
+    name: 'scoreDif',
+    nameRu: 'Разница',
+    short: 'Р',
+    shortTable: true
+  },
+  {
+    name: 'points',
+    nameRu: 'Очки',
+    short: 'О',
+    shortTable: true
+  },
 ];
 
 export const gamesToShow = 5;
