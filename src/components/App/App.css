@@ -8,7 +8,7 @@
   --table-grey: #353434;
   --radius-table: 10px;
   --padding-table: 15px;
-  --main-font: 14px;
+  --main-font: 15px;
   --transition: all 0.3s;
   --main-gap: 55px;
   --top-gap: 25px;
@@ -21,7 +21,8 @@ body {
 .page {
   /* min-height: 100vh; */
   background-color: var(--page-background);
-  font-family: 'Century Gothic', Arial, Helvetica, Sans-serif;
+  font-family: 'Noto Sans Display', Sans-serif, Arial, Helvetica;;
+  font-weight: 300;
   color: var(--font-color);
   font-size: var(--main-font);
 }

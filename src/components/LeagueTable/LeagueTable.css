@@ -9,6 +9,7 @@
 .standings__heading {
   margin: 0;
   font-size: var(--header-font);
+  font-weight: 400;
 }
 
 .standings__heading-container_inactive {
@@ -55,6 +56,7 @@
   min-width: 35px;
   transition: var(--transition);
   font-size: 13px;
+  font-weight: 300;
 }
 
 /* .table__header-cell:hover {
