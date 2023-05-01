@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import image from '../../images/pngegg.png'
+import image from '../../images/pngaaa.com-754807.png'
 import { Doughnut } from 'react-chartjs-2';
 
 function Promo(props) {

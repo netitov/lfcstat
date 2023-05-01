@@ -11,7 +11,7 @@ function Switcher(props) {
   }
 
   useEffect(() => {
-    setOverlayStyle({ width: activeRef.current.offsetWidth});
+    setOverlayStyle({ width: activeRef.current.offsetWidth, transform: `translate(${activeRef.current.offsetLeft - 3}px, 0px)`});
   }, [])
 
   return (

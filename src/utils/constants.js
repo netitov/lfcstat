@@ -545,3 +545,16 @@ export const statsGameFilter = [
     default: false
   }
 ];
+
+export const fixturesFilter = [
+  {
+    name: 'results',
+    nameRu: 'результаты',
+    default: true
+  },
+  {
+    name: 'fixtures',
+    nameRu: 'расписание',
+    default: false
+  }
+];

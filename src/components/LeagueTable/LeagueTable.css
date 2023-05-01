@@ -40,6 +40,7 @@
   background: var(--second-grey);
   border-radius: var(--radius-table);
   border-spacing: 0;
+  min-width: 355px;
   /* margin: 30px auto; */
 }
 

@@ -14,8 +14,12 @@
   --top-gap: 25px;
 }
 
+body {
+  overflow-y: scroll;
+}
+
 .page {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-color: var(--page-background);
   font-family: 'Century Gothic', Arial, Helvetica, Sans-serif;
   color: var(--font-color);
@@ -25,7 +29,11 @@
 .page__container {
   margin: auto;
   width: var(--page-width);
-  max-width: 1200px;
+  max-width: 1300px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 

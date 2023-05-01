@@ -13,6 +13,7 @@ import { CategoryScale } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import Footer from '../Footer/Footer';
 import PlayersTable from '../PlayersTable/PlayersTable';
+import Fixtures from '../Fixtures/Fixtures';
 
 Chart.register(CategoryScale);
 Chart.register(ChartDataLabels);
@@ -24,6 +25,8 @@ function App() {
   const [shortStandings, setShortStandings] = useState([]);
   const [nearEvents, setNearEvents] = useState([]);
   const [finishedEvents, setFinishedEvents] = useState([]);
+  const [fullEvents, setFullEvents] = useState([]);
+  const [filteredEvents, setFilteredEvents] = useState([]);
   const [news, setNews] = useState([]);
   const [teamCharts, setTeamCharts] = useState([]);
   const [videos, setVideos] = useState([]);
@@ -31,8 +34,9 @@ function App() {
   const [sortedColumnPl, setSortedColumnPl] = useState('rating');
   const [sortedColumnLeague, setSortedColumnLeague] = useState('№');
   const [order, setOrder] = useState('dsc');
-  const [activeBtn, setActiveBtn] = useState(statsGameFilter.find((i) => i.default).nameRu);
+  const [activeBtnPl, setActiveBtnPl] = useState(statsGameFilter.find((i) => i.default).nameRu);
   const [sortedPlStats, setSortedPlStats] = useState([]);
+  const [activeBtnEvents, setActiveBtnEvents] = useState('результаты');
 
 
   let playerStatsArr = [];
@@ -89,10 +93,13 @@ function App() {
       localStorage.setItem('events', JSON.stringify(evts));
       const sorteredEvents = evts.sort((a,b) => dayjs(a.startAt) - dayjs(b.startAt));
       setNearEvents(sorteredEvents.filter((i) => dayjs.utc(i.startAt).format() >= dayjs.utc().format()).slice(0, gamesToShow));
+      setFullEvents(sorteredEvents.slice(-50));
 
       //finished events
       const finishedGames = sorteredEvents.filter((i) => i.status === 'finished');
       setFinishedEvents(finishedGames.slice(-gamesToShow));
+      setFilteredEvents(finishedGames.reverse());
+
 
       //news
       localStorage.setItem('news', JSON.stringify(nws));
@@ -177,8 +184,8 @@ function App() {
   }
 
   //switch players table type: overall/ pergame
-  function handleSwitch(btn) {
-    setActiveBtn(btn);
+  function handleSwitchPlayerStats(btn) {
+    setActiveBtnPl(btn);
     switchPlayerStats(btn);
   }
 
@@ -205,10 +212,21 @@ function App() {
     }
   }
 
+    //switch events type: finished/ fixtures
+  function switchEvents(data) {
+    setActiveBtnEvents(data);
+    if (data === 'результаты') {
+      setFilteredEvents(fullEvents.filter((i) => i.status === 'finished').reverse());
+    } else {
+      setFilteredEvents(fullEvents.filter((i) => dayjs.utc(i.startAt).format() >= dayjs.utc().format()));
+    }
+  }
+
   //sort players stats table if active btn is switched
   useEffect(() => {
     sortPlayersTable(sortedColumnPl, true);
-  }, [activeBtn])
+  }, [activeBtnPl])
+
 
   return (
     <div className="page" /* onClick={test} */>
@@ -227,6 +245,7 @@ function App() {
                 news={news}
                 data={standings.find((i) => i.teamName === mainTeam)}
                 videos={videos}
+                filterEvents={switchEvents}
               />
             }
           />
@@ -259,9 +278,20 @@ function App() {
               <PlayersTable
                 sortTable={sortPlayersTable}
                 sorted={sortedColumnPl}
-                handleSwitch={handleSwitch}
-                activeBtn={activeBtn}
+                handleSwitch={handleSwitchPlayerStats}
+                activeBtn={activeBtnPl}
                 dataArr={sortedPlStats}
+              />
+            }
+          />
+
+          <Route
+            path="/fixtures"
+            element={
+              <Fixtures
+                events={filteredEvents}
+                handleSwitch={switchEvents}
+                activeBtn={activeBtnEvents}
               />
             }
           />

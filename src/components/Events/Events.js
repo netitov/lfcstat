@@ -4,12 +4,15 @@ import EventCard from '../EventCard/EventCard';
 
 function Events(props) {
 
+  function handleLinkClick() {
+    props.filterEvents(props.type);
+  }
 
   return (
     <div className="events">
       <div className="events__container">
         <h2 className="events__heading">{props.tableTitle}</h2>
-        <a className="events__link" href="#">Подробнее</a>
+        <Link className="events__link" to={props.route} onClick={handleLinkClick}>Подробнее</Link>
       </div>
 
       {props.events.map((i) => {

@@ -16,6 +16,9 @@ function Main(props) {
         <Events
           events={props.finishedEvents}
           tableTitle="Последние матчи"
+          route="/fixtures"
+          type="результаты"
+          filterEvents={props.filterEvents}
         />
         <LeagueTable
           onThClick={props.onThClick}
@@ -26,6 +29,9 @@ function Main(props) {
         <Events
           events={props.events}
           tableTitle="Расписание"
+          route="/fixtures"
+          type="расписание"
+          filterEvents={props.filterEvents}
         />
 
       </div>
