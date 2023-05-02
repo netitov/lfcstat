@@ -12,7 +12,7 @@ function Switcher(props) {
 
   useEffect(() => {
     setOverlayStyle({ width: activeRef.current.offsetWidth, transform: `translate(${activeRef.current.offsetLeft - 3}px, 0px)`});
-  }, [])
+  }, [props.activeBtn])
 
   return (
     <div className="switcher">

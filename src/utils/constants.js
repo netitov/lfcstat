@@ -558,3 +558,26 @@ export const fixturesFilter = [
     default: false
   }
 ];
+
+export const headerMenu = [
+  {
+    name: 'LfcStats',
+    route: '/',
+  },
+  {
+    name: 'Статистика',
+    route: '/players-stats',
+  },
+  {
+    name: 'Графики',
+    route: '/charts',
+  },
+  {
+    name: 'Результаты',
+    route: '/fixtures',
+  },
+  /* {
+    name: 'Расписание',
+    route: '/fixtures',
+  } */
+];

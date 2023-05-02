@@ -231,7 +231,10 @@ function App() {
   return (
     <div className="page" /* onClick={test} */>
       <div className="page__container">
-        <Header />
+        <Header
+          filterEvents={switchEvents}
+          active={activeBtnEvents}
+        />
         <Routes>
 
           <Route
@@ -295,7 +298,6 @@ function App() {
               />
             }
           />
-
 
         </Routes>
 
