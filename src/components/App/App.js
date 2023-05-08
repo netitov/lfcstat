@@ -14,6 +14,7 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import Footer from '../Footer/Footer';
 import PlayersTable from '../PlayersTable/PlayersTable';
 import Fixtures from '../Fixtures/Fixtures';
+import RadarChart from '../RadarChart/RadarChart';
 
 Chart.register(CategoryScale);
 Chart.register(ChartDataLabels);
@@ -195,18 +196,20 @@ function App() {
       let newArr = [];
 
       playerStats.forEach((i) => {
-        newArr.push({...i})
+        newArr.push({...i});
       })
 
       newArr.forEach((i) => {
         for (let key in i) {
           if (key !== 'name' && key !== 'appearances' && key !== 'rating' && key !== '№') {
             let newValue = Number((i[key] / i.appearances).toFixed(2));
-            i[key] = newValue
+            i[key] = newValue;
           }
         }
       })
       setSortedPlStats(newArr);
+      //return newArr;
+      //debugger
     } else {
       setSortedPlStats(playerStats);
     }
@@ -227,9 +230,32 @@ function App() {
     sortPlayersTable(sortedColumnPl, true);
   }, [activeBtnPl])
 
+  function switchToPerGame() {
+    let newArr = [];
+    playerStats.forEach((i) => {
+      newArr.push({...i});
+    })
+    newArr.forEach((i) => {
+      for (let key in i) {
+        if (key !== 'name' && key !== 'appearances' && key !== 'rating' && key !== '№') {
+          let newValue = Number((i[key] / i.appearances).toFixed(2));
+          i[key] = newValue;
+        }
+      }
+    })
+    return newArr;
+  }
+
+  const test2 = switchToPerGame()
+
+  function test() {
+    //console.log(playerStats)
+    //console.log(sortedPlStats)
+  }
+
 
   return (
-    <div className="page" /* onClick={test} */>
+    <div className="page" onClick={test}>
       <div className="page__container">
         <Header
           filterEvents={switchEvents}
@@ -295,6 +321,16 @@ function App() {
                 events={filteredEvents}
                 handleSwitch={switchEvents}
                 activeBtn={activeBtnEvents}
+              />
+            }
+          />
+
+          <Route
+            path="/compare"
+            element={
+              <RadarChart
+                playerStats={sortedPlStats}
+                handleSwitch={handleSwitchPlayerStats}
               />
             }
           />

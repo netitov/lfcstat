@@ -98,7 +98,7 @@ export const navBtns = [
   {
     icon: <BsPersonFillAdd size={30}/>,
     title: 'Сравнение игороков',
-    route: '/stats/compare'
+    route: '/compare'
   },
   {
     icon: <BsBarChartFill size={30}/>,
@@ -261,21 +261,25 @@ export const teamCharts = [
   {
     type: 'attack',
     typeRu: 'Аттака',
+    nameRu: 'Аттака',
     initOpt: 'goalsScored'
   },
   {
     type: 'defence',
     typeRu: 'Оборона',
+    nameRu: 'Оборона',
     initOpt: 'goalsConceded'
   },
   {
     type: 'discipline',
     typeRu: 'Дисциплина',
+    nameRu: 'Дисциплина',
     initOpt: 'fouls'
   },
   {
     type: 'team',
     typeRu: 'Взимодействие',
+    nameRu: 'Взимодействие',
     initOpt: 'averageBallPossession'
   },
 ];
@@ -331,192 +335,246 @@ export const playersTableData = [
   {
     name: 'position',
     nameRu: '№',
+    nameRadar: '№',
     short: '№',
     include: true,
-    type: 'Другое'
+    type: 'Другое',
+    compare: false
   },
   {
     name: 'name',
     nameRu: 'Игрок',
+    nameRadar: 'Игрок',
     short: 'Игрок',
     include: true,
-    type: 'Другое'
+    type: 'Другое',
+    compare: true
   },
   {
     name: 'appearances',
     nameRu: 'Матчи',
+    nameRadar: 'Матчи',
     short: 'Матчи',
     include: true,
-    type: 'Общее'
+    type: 'Общее',
+    compare: false
+
   },
   {
     name: 'goals',
-    nameRu: 'Забито мячей',
+    nameRu: 'Голы',
+    nameRadar: 'Голы',
     short: 'Голы',
     include: true,
-    type: 'Атака'
+    type: 'Атака',
+    compare: true
   },
   {
     name: 'assists',
     nameRu: 'Ассисты',
+    nameRadar: 'Ассисты',
     short: 'Асс',
     include: true,
-    type: 'Атака'
+    type: 'Атака',
+    compare: true
   },
   {
     name: 'expectedGoals',
-    nameRu: 'Ожидамые голы',
+    nameRu: 'Ожидаемые голы',
+    nameRadar: 'Ожид. голы',
     short: 'ОжГолы',
     include: false,
-    type: 'Атака'
+    type: 'Атака',
+    compare: true
   },
-
   {
     name: 'expectedAssists',
     nameRu: 'Ожидаемые ассисты',
+    nameRadar: 'Ожид. ассисты',
     short: 'ОжАссисты',
     include: false,
-    type: 'Атака'
+    type: 'Атака',
+    compare: true
   },
   {
     name: 'goalsAssistsSum',
     nameRu: 'Голы + ассисты',
+    nameRadar: 'Голы + ассисты',
     short: 'Г+А',
     include: true,
-    type: 'Атака'
+    type: 'Атака',
+    compare: false
   },
   {
     name: 'bigChancesCreated',
-    nameRu: 'Создано опасных моментов',
+    nameRu: 'Создано опаcных моментов',
+    nameRadar: ['Созд.опаc.', 'моментов'],
     short: 'СОМ',
     include: true,
-    type: 'Атака'
+    type: 'Атака',
+    compare: true
   },
   {
     name: 'keyPasses',
     nameRu: 'Ключевые передачи',
+    nameRadar: ['Ключ.', 'передачи'],
     short: 'КлПер',
     include: true,
-    type: 'Атака'
+    type: 'Атака',
+    compare: true
   },
   {
     name: 'tackles',
     nameRu: 'Отборы',
+    nameRadar: 'Отборы',
     short: 'Отб',
     include: true,
-    type: 'Оборона'
+    type: 'Оборона',
+    compare: true
   },
   {
     name: 'interceptions',
     nameRu: 'Перехваты',
+    nameRadar: 'Перехваты',
     short: 'Перехв',
     include: true,
-    type: 'Оборона'
+    type: 'Оборона',
+    compare: true
   },
   {
     name: 'penaltyGoals',
     nameRu: 'Голы с пенальти',
+    nameRadar: 'Голы с пенальти',
     short: 'ГП',
     include: false,
-    type: 'Атака'
+    type: 'Атака',
+    compare: false
   },
   {
     name: 'freeKickGoal',
     nameRu: 'Голы со штрафных',
+    nameRadar: 'Голы со штрафных',
     short: 'ГШ',
     include: false,
-    type: 'Атака'
+    type: 'Атака',
+    compare: false
   },
   {
     name: 'rating',
     nameRu: 'Рейтинг',
+    nameRadar: 'Рейтинг',
     short: 'Рейт',
     include: true,
-    type: 'Общее'
+    type: 'Общее',
+    compare: false
   },
   {
     name: 'scoringFrequency',
     nameRu: 'Частота голов',
+    nameRadar: 'Частота голов',
     short: 'ЧМ',
     include: false,
-    type: 'Атака'
+    type: 'Атака',
+    compare: false
   },
   {
     name: 'totalShots',
-    nameRu: 'Всего ударов',
+    nameRu: 'Удары',
+    nameRadar: 'Удары',
     short: 'У',
     include: false,
-    type: 'Атака'
+    type: 'Атака',
+    compare: true
   },
   {
     name: 'shotsOnTarget',
     nameRu: 'Удары в створ',
+    nameRadar: 'Удары в створ',
     short: 'УС',
     include: false,
-    type: 'Атака'
+    type: 'Атака',
+    compare: false
   },
   {
     name: 'bigChancesMissed',
     nameRu: 'Упущено опасных моментов',
+    nameRadar: ['Упущ. опасных', 'моментов'],
     short: 'УОМ',
     include: false,
-    type: 'Атака'
+    type: 'Атака',
+    compare: false
   },
   {
     name: 'accuratePasses',
     nameRu: 'Точные передачи',
+    nameRadar: ['Точные', 'передачи'],
     short: 'П',
     include: false,
-    type: 'Взаимодействие'
+    type: 'Взаимодействие',
+    compare: true
   },
   {
     name: 'accurateLongBalls',
     nameRu: 'Точные длинные передачи',
+    nameRadar: ['Точные', 'длин.передачи'],
     short: 'ДП',
     include: false,
-    type: 'Взаимодействие'
+    type: 'Взаимодействие',
+    compare: false
   },
   {
     name: 'successfulDribbles',
     nameRu: 'Успешный дриблинг',
+    nameRadar: ['Успешный', 'дриблинг'],
     short: 'УД',
     include: false,
-    type: 'Атака'
+    type: 'Атака',
+    compare: true
   },
   {
     name: 'penaltyWon',
-    nameRu: 'Взято пенальти',
+    nameRu: 'Отражено пенальти',
+    nameRadar: ['Отражено', 'пенальти'],
     short: 'ВП',
     include: false,
-    type: 'Атака'
+    type: 'Атака',
+    compare: false
   },
   {
     name: 'clearances',
     nameRu: 'Чистые матчи',
+    nameRadar: ['Чистые', 'матчи'],
     short: 'БезПр',
     include: false,
-    type: 'Оборона'
+    type: 'Оборона',
+    compare: false
   },
   {
-    name: 'Потери владения',
-    nameRu: 'Рейтинг',
+    name: 'possessionLost',
+    nameRu: 'Потери владения',
+    nameRadar: ['Потери', 'владения'],
     short: 'ПотВл',
     include: false,
-    type: 'Оборона'
+    type: 'Оборона',
+    compare: false
   },
   {
     name: 'yellowCards',
     nameRu: 'Желтые карточки',
+    nameRadar: ['Желтые', 'карточки'],
     short: 'ЖК',
     include: false,
-    type: 'Дисциплина'
+    type: 'Дисциплина',
+    compare: false
   },
   {
     name: 'redCards',
     nameRu: 'Красные карточки',
+    nameRadar: ['Красные', 'карточки'],
     short: 'КК',
     include: false,
-    type: 'Дисциплина'
+    type: 'Дисциплина',
+    compare: false
   },
 ];
 
