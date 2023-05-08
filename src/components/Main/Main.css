@@ -5,6 +5,7 @@
   align-items: center;
   gap: var(--main-gap);
   margin-bottom: var(--main-gap);
+  animation: opacity 0.7s;
 }
 
 .main__container {

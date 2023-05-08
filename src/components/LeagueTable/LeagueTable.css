@@ -29,11 +29,12 @@
   display: none;
 }
 
-.standings_whole {
+.standings_full {
   display: flex;
   flex-direction: column;
   width: 70%;
   margin: var(--top-gap) auto var(--main-gap);
+  animation: opacity 0.7s;
 }
 
 .table {
@@ -120,7 +121,7 @@
 }
 
 @media (max-width: 900px) {
-  .standings_whole {
+  .standings_full {
     width: var(--page-width);
   }
 }

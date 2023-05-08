@@ -9,7 +9,7 @@ function LeagueTable(props) {
 
   //hide colums from main page
   const location = useLocation().pathname;
-  const tableClass = location === '/standings' ? ' standings_whole' : '';
+  const tableClass = location === '/standings' ? ' standings_full' : '';
   const headingClass = location === '/standings' ? ' standings__heading-container_inactive' : '';
 
   return (

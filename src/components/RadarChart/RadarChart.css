@@ -5,6 +5,7 @@
   align-items: center;
   margin: var(--top-gap) 0 var(--main-gap);
   gap: var(--top-gap);
+  animation: opacity 0.7s;
 }
 
 .radar > h2 {
