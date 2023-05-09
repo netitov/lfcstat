@@ -335,6 +335,18 @@ function App() {
             }
           />
 
+          <Route
+            path="/team-stats"
+            element={
+              <LeagueTable
+                standingsHeader={standingsHeader}
+                standings={standings}
+                sortTable={sortLeagueTable}
+                sorted={sortedColumnLeague}
+              />
+            }
+          />
+
         </Routes>
 
         <Footer />

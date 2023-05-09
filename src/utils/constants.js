@@ -93,7 +93,7 @@ export const navBtns = [
   {
     icon: <BsPeopleFill size={30}/>,
     title: 'Статистика команды',
-    route: '/stats/team'
+    route: '/team-stats'
   },
   {
     icon: <BsPersonFillAdd size={30}/>,

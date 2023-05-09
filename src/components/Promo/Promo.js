@@ -58,10 +58,10 @@ function Promo(props) {
 
   return (
     <div className="promo">
-
+      <h1>Статистика и результаты ФК "Ливерпуль"</h1>
       <div className="promo__container">
         <img className="promo__img" src={image} />
-        <h1>Статистика и результаты ФК "Ливерпуль"</h1>
+
       </div>
 
       <div className="promo__cards-container">

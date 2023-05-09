@@ -3,37 +3,50 @@
   display: flex;
   justify-content: space-around;
   position: relative;
+  margin-top: 35px;
 }
 
 .promo__img {
   filter: contrast(0.1);
   -webkit-filter: contrast(0.1);
   opacity: 0.2;
-  max-height: 450px;
+  /* max-height: 450px; */
   border-radius: 15px;
   object-fit: cover;
+
+  width: 100%;
+  display: block;
 }
 
 .promo__container {
   position: relative;
+
+  width: 27%;
+  max-width: 370px;
+  max-height: 470px;
+  min-width: 250px;
 }
 
-.promo__container > h1 {
+.promo/* __container */ > h1 {
   margin: 0;
   position: absolute;
-  top: 28%;
-  left: 35%;
+  top: 25%;
+  left: 17%;
+  width: 20%;
   min-width: 382px;
   backdrop-filter: blur(4px);
   background: #1616166b;
   padding: 3px;
   font-weight: 100;
+  z-index: 1;
 }
 
 .promo__cards-container {
   display: flex;
   align-items: center;
   gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .promo__card {
@@ -55,7 +68,7 @@
 
 .promo__chart-title > h3 {
   margin: 0;
-  font-size: 32px;
+  font-size: 2em;
 }
 
 .promo__card_small {
@@ -99,4 +112,72 @@
   bottom: -12%;
   font-size: 0.9em;
   color: var(--light-grey);
+}
+
+@media (max-width: 1130px) {
+  .promo > h1 {
+    top: -7%;
+    left: 28%;
+    background: none;
+    width: auto;
+    font-size: 1.7em;
+  }
+
+  .promo__chart-title > h3 {
+    font-size: 1.7em;
+  }
+}
+
+@media (max-width: 780px) {
+  .promo {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: var(--main-gap)
+  }
+
+  .promo > h1 {
+    top: 39%;
+    left: 35%;
+    width: 315px;
+    min-width: auto;
+    background: #1616166b;
+  }
+
+  .promo__container {
+    width: auto;
+    max-height: inherit;
+  }
+
+  .promo__note {
+    bottom: -7%;
+    top: auto;
+  }
+}
+
+@media (max-width: 580px) {
+  .promo > h1 {
+    top: 39%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.6em;
+    width: 260px;
+  }
+
+  .promo__container {
+    width: 90%;
+  }
+
+  .promo__small-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .promo__card_small {
+    width: 29%;
+  }
+
+  .promo__note {
+    bottom: -44%;
+  }
 }

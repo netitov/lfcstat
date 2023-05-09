@@ -9,8 +9,8 @@ function LeagueTable(props) {
 
   //hide colums from main page
   const location = useLocation().pathname;
-  const tableClass = location === '/standings' ? ' standings_full' : '';
-  const headingClass = location === '/standings' ? ' standings__heading-container_inactive' : '';
+  const tableClass = location === '/standings' || location === '/team-stats' ? ' standings_full' : '';
+  const headingClass = location === '/standings' || location === '/team-stats' ? ' standings__heading-container_inactive' : '';
 
   return (
     <div className={`standings${tableClass}`}>
