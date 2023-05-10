@@ -31,13 +31,13 @@
 }
 
 .trophies {
-  display: grid;
+  display: flex;
   align-items: baseline;
   width: 100%;
   justify-content: space-around;
   overflow: hidden;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px
+  gap: 5%;
+  flex-wrap: wrap;
 }
 
 .trophies__card {

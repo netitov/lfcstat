@@ -126,3 +126,20 @@
   }
 }
 
+@media (max-width: 370px) {
+
+  .table {
+    padding: 7px;
+    min-width: 300px;
+  }
+
+  .table__row {
+    font-size: 0.95em;
+  }
+
+  .table__data_non-align {
+    min-width: 90px;
+  }
+
+}
+

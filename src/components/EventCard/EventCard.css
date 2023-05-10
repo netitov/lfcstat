@@ -92,3 +92,14 @@
   text-align: end;
   margin-right: 5px;
 }
+
+@media (max-width: 370px) {
+  .event-card {
+    grid-column-gap: 6px;
+    grid-template-columns: auto 45px auto;
+  }
+  .event-card__team {
+    width: 76px;
+    font-size: 0.95em;
+  }
+}
