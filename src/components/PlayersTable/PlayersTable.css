@@ -26,5 +26,12 @@
 
 .players-table__head-row > th {
   min-width: 55px;
-  /* font-size: 13px; */
 }
+
+@media (max-width: 580px) {
+
+  .players-table__head-row > th {
+    min-width: 45px;
+  }
+}
+

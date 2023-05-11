@@ -1,10 +1,12 @@
 .chart {
   width: 45%;
   max-width: 500px;
+  min-width: 350px;
   padding: 10px;
   box-sizing: border-box;
   background: var(--second-grey);
   border-radius: var(--radius-table);
+  flex-grow: 1;
 }
 
 .chart__container {

@@ -67,8 +67,6 @@
 }
 
 .fixtures-card__challenge {
-  /* font-size: 13px; */
-  /* color: var(--light-grey); */
   white-space: nowrap;
   width: 160px;
 }
@@ -118,8 +116,69 @@
 }
 
 .fixtures-card__finish-date {
-  /* font-size: 13px; */
+  font-size: 13px;
   color: var(--light-grey);
   text-align: end;
   margin-right: 5px;
+}
+
+@media (max-width: 780px) {
+  .fixtures-card__challenge {
+    display: none;
+  }
+}
+
+@media (max-width: 580px) {
+
+  .fixtures-card {
+    margin-top: 3%;
+    align-items: flex-start;
+    min-height: 65px;
+  }
+
+  .fixtures-card__container {
+    gap: 10px;
+  }
+
+  .fixtures-card__challenge {
+    display: none;
+  }
+
+  .fixtures-card__calendar-logo {
+    display: none;
+  }
+
+  .fixtures-card__challenge-container {
+    right: 5%;
+    bottom: 5px;
+    position: absolute;
+  }
+
+  .fixtures-card__date-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5px;
+  }
+
+  .fixtures-card__finish-date {
+    margin-right: 0;
+  }
+
+  .fixtures-card__challenge-logo {
+    width: 1.7em;
+  }
+
+  .fixtures-card__logo {
+    width: 35px;
+  }
+
+  .fixtures-card__team {
+    width: 80px;
+    font-size: 0.95em;
+  }
+
+  .fixtures-card__result-сontainer {
+    width: 50px;
+  }
 }
