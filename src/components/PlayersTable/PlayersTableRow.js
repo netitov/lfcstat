@@ -1,10 +1,9 @@
+import React from 'react';
 
 function PlayersTableRow(props) {
-
   function setSortedColumn(data) {
-    if (data === props.sorted) {
-      return ' table__data_active';
-    }
+    if (data === props.sorted) return ' table__data_active';
+    return '';
   }
 
   return (

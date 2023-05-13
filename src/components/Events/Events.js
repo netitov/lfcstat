@@ -1,12 +1,12 @@
-import React from 'react';
+/* eslint no-underscore-dangle: 0 */
+import React, { useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import EventCard from '../EventCard/EventCard';
 
 function Events(props) {
-
-  function handleLinkClick() {
+  const handleLinkClick = useCallback(() => {
     props.filterEvents(props.type);
-  }
+  }, [props.events]);
 
   return (
     <div className="events">
@@ -15,25 +15,22 @@ function Events(props) {
         <Link className="events__link" to={props.route} onClick={handleLinkClick}>Подробнее</Link>
       </div>
 
-      {props.events.map((i) => {
-        return (
-          <EventCard
-            homeTeamName={i.homeTeamName}
-            homeTeamLogo={i.homeTeamLogo}
-            startAt={i.startAt}
-            awayTeamName={i.awayTeamName}
-            awayTeamLogo={i.awayTeamLogo}
-            challenge={i.challenge}
-            homeScore={i.homeScore}
-            awayScore={i.awayScore}
-            key={i._id}
-            status={i.status}
-          />
-        )
-      })}
+      {props.events.map((i) => (
+        <EventCard
+          homeTeamName={i.homeTeamName}
+          homeTeamLogo={i.homeTeamLogo}
+          startAt={i.startAt}
+          awayTeamName={i.awayTeamName}
+          awayTeamLogo={i.awayTeamLogo}
+          challenge={i.challenge}
+          homeScore={i.homeScore}
+          awayScore={i.awayScore}
+          key={i._id}
+          status={i.status}
+        />
+      ))}
     </div>
   );
 }
 
 export default Events;
-

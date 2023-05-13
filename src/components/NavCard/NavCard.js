@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 function NavCard(props) {
   return (
     <li className="card">
@@ -11,7 +10,7 @@ function NavCard(props) {
       </Link>
     </li>
 
-  )
+  );
 }
 
 export default NavCard;

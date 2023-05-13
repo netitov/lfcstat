@@ -3,30 +3,26 @@ import { ImYoutube } from 'react-icons/im';
 
 function Videos(props) {
   const videoRef = React.createRef();
-  const [height, setHeight] = useState({ height: '0%'});
+  const [height, setHeight] = useState({ height: '0%' });
 
   useEffect(() => {
     setHeight({ height: videoRef.current !== null ? videoRef.current.offsetWidth * 0.56 : '' });
-  }, [props.videos])
-
-
+  }, [props.videos]);
 
   return (
     <div className="videos">
-      {props.videos.map((i) => {
-        return (
-          <div className="videos__card" key={i.id} ref={videoRef} style={height}>
-            <iframe allow="fullscreen;" src={`https://www.youtube.com/embed/${i.id}`} title={i.tite}></iframe>
-          </div>
-        )
-      })}
+      {props.videos.map((i) => (
+        <div className="videos__card" key={i.id} ref={videoRef} style={height}>
+          <iframe allow="fullscreen;" src={`https://www.youtube.com/embed/${i.id}`} title={i.tite} />
+        </div>
+      ))}
       <a className="videos__card videos__card_last" style={height} href="https://www.youtube.com/@LiverpoolFC/videos" target="_blank" rel="noreferrer">
         <ImYoutube />
         <p>Смотреть другие видео</p>
       </a>
 
     </div>
-  )
+  );
 }
 
 export default Videos;

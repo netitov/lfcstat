@@ -1,33 +1,32 @@
-import React, { useState } from 'react';
-import { Line } from "react-chartjs-2";
+import React, { useState, useCallback } from 'react';
+import { Line } from 'react-chartjs-2';
 import Select from '../Select/Select';
 
-
 function Chart(props) {
-
   const [option, setOption] = useState(props.initOption);
-  const perMatch = props.tsOptions.find((i) => i.name === option).perMatch;
-  const statsValues = props.teamCharts.map((i) => perMatch ? (i[option] / i.matches).toFixed(2) : i[option].toFixed(2));
+  const { perMatch } = props.tsOptions.find((i) => i.name === option);
+  const statsValues = props.teamCharts.map((i) => (perMatch ? (i[option] / i.matches).toFixed(2)
+    : i[option].toFixed(2)));
 
-  function selectOption(data) {
+  const selectOption = useCallback((data) => {
     setOption(data);
-  }
+  }, []);
 
   const options = {
     responsive: true,
     plugins: {
       legend: {
         position: 'top',
-        display: false
+        display: false,
       },
       title: {
         display: false,
         text: 'Аттака',
         padding: {
-          bottom: 25
+          bottom: 25,
         },
         font: {
-          size: 14
+          size: 14,
         },
 
       },
@@ -36,23 +35,23 @@ function Chart(props) {
         align: 'end',
         labels: {
           value: {
-            color: '#e074748f' /* props.type === 'attack' || props.type === 'defence' ? '#e074748f' : '#f6eb616b' */ //#f6eb616b
-          }
-        }
-      }
+            color: '#e074748f',
+          },
+        },
+      },
     },
     scales: {
       x: {
         grid: {
           display: false,
-          drawTicks: false
-        }
+          drawTicks: false,
+        },
       },
       y: {
         grid: {
           display: true,
-          color: "#5050501f",
-          drawTicks: false
+          color: '#5050501f',
+          drawTicks: false,
         },
         ticks: {
           display: false,
@@ -64,23 +63,22 @@ function Chart(props) {
         left: 10,
         rigt: 10,
         top: 25,
-        bottom: 10
-      }
+        bottom: 10,
+      },
     },
-    redraw: false
+    redraw: false,
 
   };
 
-  var data = {
+  const data = {
     labels: props.labels,
     datasets: [
       {
         label: option,
-        //backgroundColor: '#c8102e52',
         data: statsValues,
         borderRadius: 7,
         borderColor: '#c8102e52',
-        backgroundColor: ({chart: {ctx}}) => {
+        backgroundColor: ({ chart: { ctx } }) => {
           const bg = ctx.createLinearGradient(0, 0, 0, 400);
           bg.addColorStop(0, '#c8102e52');
           bg.addColorStop(0.5, '#c8102e00');
@@ -92,7 +90,6 @@ function Chart(props) {
 
     ],
   };
-
 
   return (
     <div className="chart">
@@ -111,9 +108,8 @@ function Chart(props) {
         options={options}
       />
 
-
     </div>
-  )
+  );
 }
 
 export default Chart;

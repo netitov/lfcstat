@@ -39,7 +39,7 @@ function Main(props) {
       <NewsList
         news={props.news}
       />
-      <Videos videos={props.videos}/>
+      <Videos videos={props.videos} />
       <Trophies />
     </main>
   );

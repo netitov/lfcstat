@@ -1,3 +1,4 @@
+/* eslint no-underscore-dangle: 0 */
 import React from 'react';
 import FixturesCard from '../FixturesCard/FixturesCard';
 import { fixturesFilter } from '../../utils/constants';
@@ -12,26 +13,24 @@ function Fixtures(props) {
         activeBtn={props.activeBtn}
       />
       <ul className="fixtures">
-        {props.events.map((i) => {
-          return (
-            <FixturesCard
-              homeTeamName={i.homeTeamName}
-              homeTeamLogo={i.homeTeamLogo}
-              startAt={i.startAt}
-              awayTeamName={i.awayTeamName}
-              awayTeamLogo={i.awayTeamLogo}
-              challenge={i.challenge}
-              homeScore={i.homeScore}
-              awayScore={i.awayScore}
-              key={i._id}
-              status={i.status}
-            />
-          )
-        })}
+        {props.events.map((i) => (
+          <FixturesCard
+            homeTeamName={i.homeTeamName}
+            homeTeamLogo={i.homeTeamLogo}
+            startAt={i.startAt}
+            awayTeamName={i.awayTeamName}
+            awayTeamLogo={i.awayTeamLogo}
+            challenge={i.challenge}
+            homeScore={i.homeScore}
+            awayScore={i.awayScore}
+            key={i._id}
+            status={i.status}
+          />
+        ))}
       </ul>
 
     </div>
-  )
+  );
 }
 
 export default Fixtures;

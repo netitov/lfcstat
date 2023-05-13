@@ -1,21 +1,13 @@
-import { useState } from 'react';
+import React from 'react';
 
 function Burger(props) {
-
-  //const [active, setActive] = useState(false);
-
-  /* function onBtnClick() {
-    setActive(!active);
-    props.openMenu(!active);
-  } */
-
   return (
-    <button className={`burger${props.active ? ' burger_active' : ''}`} id="burger" onClick={props.openMenu}>
-      <span className="burger-line"></span>
-      <span className="burger-line"></span>
-      <span className="burger-line"></span>
+    <button className={`burger${props.active ? ' burger_active' : ''}`} id="burger" onClick={props.openMenu} type="button">
+      <span className="burger-line" />
+      <span className="burger-line" />
+      <span className="burger-line" />
     </button>
-  )
+  );
 }
 
 export default Burger;

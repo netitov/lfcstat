@@ -1,6 +1,6 @@
+import React from 'react';
 
 function PlayersTableHeader(props) {
-
   const cellClass = props.sorted === props.id ? ' players-table__header-cell_active' : '';
 
   function handleSorting(e) {
@@ -8,8 +8,13 @@ function PlayersTableHeader(props) {
   }
 
   return (
-    <th onClick={handleSorting} title={props.title} data-id={props.id}
-      className={`table__header-cell players-table__header-cell${cellClass}`}>{props.name}
+    <th
+      onClick={handleSorting}
+      title={props.title}
+      data-id={props.id}
+      className={`table__header-cell players-table__header-cell${cellClass}`}
+    >
+      {props.name}
     </th>
   );
 }

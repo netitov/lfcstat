@@ -1,8 +1,9 @@
+import React from 'react';
 import { BsYoutube } from 'react-icons/bs';
 import { RiInstagramFill, RiFacebookCircleFill } from 'react-icons/ri';
-import { AiFillTwitterCircle} from 'react-icons/ai';
+import { AiFillTwitterCircle } from 'react-icons/ai';
 
-function Contacts(props) {
+function Contacts() {
   return (
     <ul className="contacts">
       <li>
@@ -28,6 +29,5 @@ function Contacts(props) {
     </ul>
   );
 }
-
 
 export default Contacts;

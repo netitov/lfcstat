@@ -1,4 +1,8 @@
-import { BsFillPersonFill, BsPeopleFill, BsPersonFillAdd, BsBarChartFill } from 'react-icons/bs';
+import React from 'react';
+
+import {
+  BsFillPersonFill, BsPeopleFill, BsPersonFillAdd, BsBarChartFill,
+} from 'react-icons/bs';
 import soccer from '../images/soccer-logo-690.svg';
 import sportEx from '../images/sportEx.png';
 import rambler from '../images/logo_ru.png';
@@ -20,61 +24,61 @@ export const standingsHeader = [
     name: 'position',
     nameRu: 'Номер',
     short: '№',
-    shortTable: true
+    shortTable: true,
   },
   {
     name: 'teamName',
     nameRu: 'Команда',
     short: 'Команда',
-    shortTable: true
+    shortTable: true,
   },
   {
     name: 'matches',
     nameRu: 'Матчи',
     short: 'М',
-    shortTable: true
+    shortTable: true,
   },
   {
     name: 'wins',
     nameRu: 'Выигрыши',
     short: 'В',
-    shortTable: false
+    shortTable: false,
   },
   {
     name: 'draws',
     nameRu: 'Ничьи',
     short: 'Н',
-    shortTable: false
+    shortTable: false,
   },
   {
     name: 'losses',
     nameRu: 'Поражения',
     short: 'П',
-    shortTable: false
+    shortTable: false,
   },
   {
     name: 'goalsSc',
     nameRu: 'Забито мячей',
     short: 'ЗМ',
-    shortTable: false
+    shortTable: false,
   },
   {
     name: 'goalsCon',
     nameRu: 'Пропущено мячей',
     short: 'ПМ',
-    shortTable: false
+    shortTable: false,
   },
   {
     name: 'scoreDif',
     nameRu: 'Разница',
     short: 'Р',
-    shortTable: true
+    shortTable: true,
   },
   {
     name: 'points',
     nameRu: 'Очки',
     short: 'О',
-    shortTable: true
+    shortTable: true,
   },
 ];
 
@@ -86,55 +90,55 @@ export const shortStEntries = ['position', 'logo', 'teamName', 'matches', 'score
 
 export const navBtns = [
   {
-    icon: <BsFillPersonFill size={30}/>,
+    icon: <BsFillPersonFill size={30} />,
     title: 'Статистика игроков',
-    route: '/players-stats'
+    route: '/players-stats',
   },
   {
-    icon: <BsPeopleFill size={30}/>,
+    icon: <BsPeopleFill size={30} />,
     title: 'Статистика команды',
-    route: '/team-stats'
+    route: '/team-stats',
   },
   {
-    icon: <BsPersonFillAdd size={30}/>,
+    icon: <BsPersonFillAdd size={30} />,
     title: 'Сравнение игороков',
-    route: '/compare'
+    route: '/compare',
   },
   {
-    icon: <BsBarChartFill size={30}/>,
+    icon: <BsBarChartFill size={30} />,
     title: 'Графики',
-    route: '/charts'
+    route: '/charts',
   },
 ];
 
 export const sources = [
   {
-    source:'sport-express.ru',
-    logo: sportEx
+    source: 'sport-express.ru',
+    logo: sportEx,
   },
   {
     source: 'sports.ru',
-    logo: sports
+    logo: sports,
   },
   {
     source: 'championat.com',
-    logo: chemp
+    logo: chemp,
   },
   {
     source: 'livesport.ru',
-    logo: other
+    logo: other,
   },
   {
     source: 'sport.rambler.ru',
-    logo: rambler
+    logo: rambler,
   },
   {
     source: 'soccer.ru',
-    logo: soccer
+    logo: soccer,
   },
   {
     source: 'uefa.com',
-    logo: uefa
+    logo: uefa,
   },
 
 ];
@@ -262,25 +266,25 @@ export const teamCharts = [
     type: 'attack',
     typeRu: 'Аттака',
     nameRu: 'Аттака',
-    initOpt: 'goalsScored'
+    initOpt: 'goalsScored',
   },
   {
     type: 'defence',
     typeRu: 'Оборона',
     nameRu: 'Оборона',
-    initOpt: 'goalsConceded'
+    initOpt: 'goalsConceded',
   },
   {
     type: 'discipline',
     typeRu: 'Дисциплина',
     nameRu: 'Дисциплина',
-    initOpt: 'fouls'
+    initOpt: 'fouls',
   },
   {
     type: 'team',
     typeRu: 'Взимодействие',
     nameRu: 'Взимодействие',
-    initOpt: 'averageBallPossession'
+    initOpt: 'averageBallPossession',
   },
 ];
 
@@ -289,47 +293,45 @@ export const cups = [
     name: 'Лига Чемпионов',
     amount: 6,
     logo: clcup,
-    class: ' trophies__img_black'
+    class: ' trophies__img_black',
   },
   {
     name: 'Чемпионат Англии',
     amount: 19,
     logo: plcup,
-    class: ''
+    class: '',
   },
   {
     name: 'Кубок Англии',
     amount: 8,
     logo: facup,
-    class: ' trophies__img_black'
+    class: ' trophies__img_black',
   },
   {
     name: 'Кубок Лиги',
     amount: 9,
     logo: leaguecup,
-    class: ' trophies__img_small'
+    class: ' trophies__img_small',
   },
   {
     name: 'Кубок УЕФА',
     amount: 3,
     logo: uefacup,
-    class: ''
+    class: '',
   },
   {
     name: 'Суперкубок УЕФА',
     amount: 4,
     logo: ueafs,
-    class: ''
+    class: '',
   },
   {
     name: 'Клубный ЧМ',
     amount: 1,
     logo: fifa,
-    class: ''
+    class: '',
   },
 ];
-
-
 
 export const playersTableData = [
   {
@@ -339,7 +341,7 @@ export const playersTableData = [
     short: '№',
     include: true,
     type: 'Другое',
-    compare: false
+    compare: false,
   },
   {
     name: 'name',
@@ -348,7 +350,7 @@ export const playersTableData = [
     short: 'Игрок',
     include: true,
     type: 'Другое',
-    compare: true
+    compare: true,
   },
   {
     name: 'appearances',
@@ -357,7 +359,7 @@ export const playersTableData = [
     short: 'Матчи',
     include: true,
     type: 'Общее',
-    compare: false
+    compare: false,
 
   },
   {
@@ -367,7 +369,7 @@ export const playersTableData = [
     short: 'Голы',
     include: true,
     type: 'Атака',
-    compare: true
+    compare: true,
   },
   {
     name: 'assists',
@@ -376,7 +378,7 @@ export const playersTableData = [
     short: 'Асс',
     include: true,
     type: 'Атака',
-    compare: true
+    compare: true,
   },
   {
     name: 'expectedGoals',
@@ -385,7 +387,7 @@ export const playersTableData = [
     short: 'ОжГолы',
     include: false,
     type: 'Атака',
-    compare: true
+    compare: true,
   },
   {
     name: 'expectedAssists',
@@ -394,7 +396,7 @@ export const playersTableData = [
     short: 'ОжАссисты',
     include: false,
     type: 'Атака',
-    compare: true
+    compare: true,
   },
   {
     name: 'goalsAssistsSum',
@@ -403,7 +405,7 @@ export const playersTableData = [
     short: 'Г+А',
     include: true,
     type: 'Атака',
-    compare: false
+    compare: false,
   },
   {
     name: 'bigChancesCreated',
@@ -412,7 +414,7 @@ export const playersTableData = [
     short: 'СОМ',
     include: true,
     type: 'Атака',
-    compare: true
+    compare: true,
   },
   {
     name: 'keyPasses',
@@ -421,7 +423,7 @@ export const playersTableData = [
     short: 'КлПер',
     include: true,
     type: 'Атака',
-    compare: true
+    compare: true,
   },
   {
     name: 'tackles',
@@ -430,7 +432,7 @@ export const playersTableData = [
     short: 'Отб',
     include: true,
     type: 'Оборона',
-    compare: true
+    compare: true,
   },
   {
     name: 'interceptions',
@@ -439,7 +441,7 @@ export const playersTableData = [
     short: 'Перехв',
     include: true,
     type: 'Оборона',
-    compare: true
+    compare: true,
   },
   {
     name: 'penaltyGoals',
@@ -448,7 +450,7 @@ export const playersTableData = [
     short: 'ГП',
     include: false,
     type: 'Атака',
-    compare: false
+    compare: false,
   },
   {
     name: 'freeKickGoal',
@@ -457,7 +459,7 @@ export const playersTableData = [
     short: 'ГШ',
     include: false,
     type: 'Атака',
-    compare: false
+    compare: false,
   },
   {
     name: 'rating',
@@ -466,7 +468,7 @@ export const playersTableData = [
     short: 'Рейт',
     include: true,
     type: 'Общее',
-    compare: false
+    compare: false,
   },
   {
     name: 'scoringFrequency',
@@ -475,7 +477,7 @@ export const playersTableData = [
     short: 'ЧМ',
     include: false,
     type: 'Атака',
-    compare: false
+    compare: false,
   },
   {
     name: 'totalShots',
@@ -484,7 +486,7 @@ export const playersTableData = [
     short: 'У',
     include: false,
     type: 'Атака',
-    compare: true
+    compare: true,
   },
   {
     name: 'shotsOnTarget',
@@ -493,7 +495,7 @@ export const playersTableData = [
     short: 'УС',
     include: false,
     type: 'Атака',
-    compare: false
+    compare: false,
   },
   {
     name: 'bigChancesMissed',
@@ -502,7 +504,7 @@ export const playersTableData = [
     short: 'УОМ',
     include: false,
     type: 'Атака',
-    compare: false
+    compare: false,
   },
   {
     name: 'accuratePasses',
@@ -511,7 +513,7 @@ export const playersTableData = [
     short: 'П',
     include: false,
     type: 'Взаимодействие',
-    compare: true
+    compare: true,
   },
   {
     name: 'accurateLongBalls',
@@ -520,7 +522,7 @@ export const playersTableData = [
     short: 'ДП',
     include: false,
     type: 'Взаимодействие',
-    compare: false
+    compare: false,
   },
   {
     name: 'successfulDribbles',
@@ -529,7 +531,7 @@ export const playersTableData = [
     short: 'УД',
     include: false,
     type: 'Атака',
-    compare: true
+    compare: true,
   },
   {
     name: 'penaltyWon',
@@ -538,7 +540,7 @@ export const playersTableData = [
     short: 'ВП',
     include: false,
     type: 'Атака',
-    compare: false
+    compare: false,
   },
   {
     name: 'clearances',
@@ -547,7 +549,7 @@ export const playersTableData = [
     short: 'БезПр',
     include: false,
     type: 'Оборона',
-    compare: false
+    compare: false,
   },
   {
     name: 'possessionLost',
@@ -556,7 +558,7 @@ export const playersTableData = [
     short: 'ПотВл',
     include: false,
     type: 'Оборона',
-    compare: false
+    compare: false,
   },
   {
     name: 'yellowCards',
@@ -565,7 +567,7 @@ export const playersTableData = [
     short: 'ЖК',
     include: false,
     type: 'Дисциплина',
-    compare: false
+    compare: false,
   },
   {
     name: 'redCards',
@@ -574,7 +576,7 @@ export const playersTableData = [
     short: 'КК',
     include: false,
     type: 'Дисциплина',
-    compare: false
+    compare: false,
   },
 ];
 
@@ -582,39 +584,39 @@ export const tournaments = [
   {
     name: 'Premier League',
     nameRu: 'Premier League',
-    default: true
+    default: true,
   },
   {
     name: 'UEFA Champions League',
     nameRu: 'UEFA Champions League',
-    default: false
-  }
+    default: false,
+  },
 ];
 
 export const statsGameFilter = [
   {
     name: 'overall',
     nameRu: 'общие данные',
-    default: true
+    default: true,
   },
   {
     name: 'per game',
     nameRu: 'за матч',
-    default: false
-  }
+    default: false,
+  },
 ];
 
 export const fixturesFilter = [
   {
     name: 'results',
     nameRu: 'результаты',
-    default: true
+    default: true,
   },
   {
     name: 'fixtures',
     nameRu: 'расписание',
-    default: false
-  }
+    default: false,
+  },
 ];
 
 export const headerMenu = [

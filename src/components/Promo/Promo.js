@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import image from '../../images/pngaaa.com-754807.png'
+import React, { useEffect, useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
+import image from '../../images/pngaaa.com-754807.png';
 
 function Promo(props) {
-
   const [chartsData, setChartsData] = useState({
     wins: 0,
     draws: 0,
     losses: 0,
     matches: 0,
     position: 0,
-    goalsSc: 0
+    goalsSc: 0,
   });
 
   useEffect(() => {
     setChartsData(props.data === undefined ? 0 : props.data);
-  })
+  });
 
   const data = {
     labels: ['Победы', 'Ничьи', 'Поражения'],
@@ -44,23 +43,23 @@ function Promo(props) {
           usePointStyle: true,
           boxWidth: 7,
           font: {
-            size: 14
-          }
-        }
+            size: 14,
+          },
+        },
       },
       datalabels: {
         font: {
           size: 14,
-        }
-      }
+        },
+      },
     },
   };
 
   return (
     <div className="promo">
-      <h1>Статистика и результаты ФК "Ливерпуль"</h1>
+      <h1>Статистика и результаты ФК &laquo;Ливерпуль&raquo;</h1>
       <div className="promo__container">
-        <img className="promo__img" src={image} />
+        <img className="promo__img" src={image} alt="Liverpool" />
 
       </div>
 
@@ -89,14 +88,14 @@ function Promo(props) {
           </div>
           <div className="promo__card promo__card_small promo__card_black">
             <p>% побед</p>
-            <h3>{Number(Math.round(chartsData.wins / chartsData.matches * 100)) || 0}</h3>
+            <h3>{(Number(Math.round(chartsData.wins / chartsData.matches) * 100)) || 0}</h3>
           </div>
         </div>
 
       </div>
 
     </div>
-  )
+  );
 }
 
-export default Promo
+export default Promo;

@@ -1,4 +1,4 @@
-# lfcstat
+# LfcStats
 
 Liverpool football stats
 

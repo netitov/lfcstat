@@ -1,25 +1,31 @@
-import { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { headerMenu } from '../../utils/constants';
 import Burger from '../Burger/Burger';
 
 function Header(props) {
-
   const [activeMenu, setActiveMenu] = useState(false);
   const { pathname } = useLocation();
 
-    function handleLinkClick(e) {
+  /* function handleLinkClick(e) {
     props.filterEvents(e.target.textContent.toLowerCase());
-    if(activeMenu) {
+    if (activeMenu) {
       setActiveMenu(false);
     }
-  }
+  } */
 
-  function openMenu() {
+  const handleLinkClick = useCallback((e) => {
+    props.filterEvents(e.target.textContent.toLowerCase());
+    if (activeMenu) {
+      setActiveMenu(false);
+    }
+  }, [props.filterEvents]);
+
+  const openMenu = useCallback(() => {
     setActiveMenu(!activeMenu);
-  }
+  }, [activeMenu]);
 
-  //style active menu li and logo
+  // style active menu li and logo
   function handleLiClass(route) {
     const activeClass = pathname === route ? ' nav__li_active' : '';
     const logoClass = route === '/' ? ' nav__li_brand' : '';
@@ -29,15 +35,17 @@ function Header(props) {
   return (
     <header className="header">
       <nav className="nav header__nav">
-        <Link className={`nav__brand nav__li${pathname === '/' ? ' nav__li_active' : ''}`} to='/'>LfcStats</Link>
+        <Link className={`nav__brand nav__li${pathname === '/' ? ' nav__li_active' : ''}`} to="/">
+          LfcStats
+        </Link>
         <ul className={`nav__ul${activeMenu ? ' nav__ul_active' : ''}`}>
-          {headerMenu.map((i) => {
-            return (
-              <li className={`nav__li${handleLiClass(i.route)}`} key={i.name} onClick={handleLinkClick}>
-                <Link to={i.route}>{i.name}</Link>
-              </li>
-            )
-          })}
+          {headerMenu.map((i) => (
+            <li className={`nav__li${handleLiClass(i.route)}`} key={i.name}>
+              <Link to={i.route} onClick={handleLinkClick} onKeyDown={handleLinkClick}>
+                {i.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
       <Burger

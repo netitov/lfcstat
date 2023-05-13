@@ -1,3 +1,4 @@
+import React from 'react';
 import Contacts from '../Contacts/Contacts';
 
 function Footer() {
@@ -7,7 +8,7 @@ function Footer() {
       <Contacts />
       <a href="https://netitov.ru/" target="_blank" rel="noreferrer">Разработано NT</a>
     </footer>
-  )
+  );
 }
 
 export default Footer;
