@@ -7,23 +7,16 @@ function Header(props) {
   const [activeMenu, setActiveMenu] = useState(false);
   const { pathname } = useLocation();
 
-  /* function handleLinkClick(e) {
-    props.filterEvents(e.target.textContent.toLowerCase());
-    if (activeMenu) {
-      setActiveMenu(false);
-    }
-  } */
+  const openMenu = useCallback(() => {
+    setActiveMenu(!activeMenu);
+  }, [activeMenu]);
 
   const handleLinkClick = useCallback((e) => {
     props.filterEvents(e.target.textContent.toLowerCase());
     if (activeMenu) {
-      setActiveMenu(false);
+      openMenu();
     }
-  }, [props.filterEvents]);
-
-  const openMenu = useCallback(() => {
-    setActiveMenu(!activeMenu);
-  }, [activeMenu]);
+  }, [openMenu]);
 
   // style active menu li and logo
   function handleLiClass(route) {

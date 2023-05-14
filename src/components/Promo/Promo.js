@@ -60,36 +60,38 @@ function Promo(props) {
       <h1>Статистика и результаты ФК &laquo;Ливерпуль&raquo;</h1>
       <div className="promo__container">
         <img className="promo__img" src={image} alt="Liverpool" />
-
       </div>
 
-      <div className="promo__cards-container">
+      <div className="promo__cards-wrapper">
+        <div className="promo__cards-container">
 
-        <div className="promo__card">
-          <Doughnut
-            data={data}
-            options={options}
-          />
-          <div className="promo__chart-title">
-            <h3>{chartsData.matches}</h3>
-            <span>матчей</span>
+          <div className="promo__card">
+            <Doughnut
+              data={data}
+              options={options}
+            />
+            <div className="promo__chart-title">
+              <h3>{chartsData.matches}</h3>
+              <span>матчей</span>
+            </div>
+
+          </div>
+
+          <div className="promo__small-container">
+            <div className="promo__card promo__card_small">
+              <p>Текущее место</p>
+              <h3>{chartsData.position}</h3>
+            </div>
+            <div className="promo__card promo__card_small promo__card_grey">
+              <p>Забито мячей</p>
+              <h3>{chartsData.goalsSc}</h3>
+            </div>
+            <div className="promo__card promo__card_small promo__card_black">
+              <p>% побед</p>
+              <h3>{(Number(Math.round(chartsData.wins / chartsData.matches) * 100)) || 0}</h3>
+            </div>
           </div>
           <p className="promo__note">*Английская Премьер-лига. Сезон 2022/2023</p>
-        </div>
-
-        <div className="promo__small-container">
-          <div className="promo__card promo__card_small">
-            <p>Текущее место</p>
-            <h3>{chartsData.position}</h3>
-          </div>
-          <div className="promo__card promo__card_small promo__card_grey">
-            <p>Забито мячей</p>
-            <h3>{chartsData.goalsSc}</h3>
-          </div>
-          <div className="promo__card promo__card_small promo__card_black">
-            <p>% побед</p>
-            <h3>{(Number(Math.round(chartsData.wins / chartsData.matches) * 100)) || 0}</h3>
-          </div>
         </div>
 
       </div>

@@ -47,6 +47,7 @@
   gap: 15px;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .promo__card {
@@ -56,6 +57,12 @@
   border-radius: 25px;
   padding: 15px;
   position: relative;
+}
+
+.promo__cards-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .promo__chart-title {
@@ -109,7 +116,8 @@
 .promo__note {
   position: absolute;
   margin: 0;
-  bottom: -12%;
+  /* bottom: -12%; */
+  bottom: -25px;
   font-size: 0.9em;
   color: var(--light-grey);
 }
@@ -149,10 +157,10 @@
     max-height: inherit;
   }
 
-  .promo__note {
+  /* .promo__note {
     bottom: -7%;
     top: auto;
-  }
+  } */
 }
 
 @media (max-width: 580px) {
@@ -177,7 +185,7 @@
     width: 29%;
   }
 
-  .promo__note {
-    bottom: -44%;
-  }
+  /* .promo__note {
+    bottom: -25px;
+  } */
 }
