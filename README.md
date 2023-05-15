@@ -1,6 +1,6 @@
 # LfcStats
 
-Football club Liverpool: detailed latest team and players' statistics.
+Football club Liverpool: detailed latest statistics of the team and players.
 
 View the project: <https://lfcstats.netitov.ru/>  
 Backend repository: <https://github.com/T-Nick-13/lfcstat-api>
