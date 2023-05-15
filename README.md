@@ -2,7 +2,7 @@
 
 Football club Liverpool: detailed latest team and players' statistics.
 
-View the project: <https://lfcstats.netitov.ru/>
+View the project: <https://lfcstats.netitov.ru/>  
 Backend repository: <https://github.com/T-Nick-13/lfcstat-api>
 
 ![Project gif](https://github.com/T-Nick-13/how-to-learn/blob/master/video3%20(1).gif)
