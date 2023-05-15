@@ -2,7 +2,7 @@
 
 Football club Liverpool: detailed latest statistics of the team and players.
 
-View the project: <https://lfcstats.netitov.ru/>  
+View the project: <https://lfcstats.netitov.ru/>
 Backend repository: <https://github.com/T-Nick-13/lfcstat-api>
 
 ![Project gif](https://github.com/T-Nick-13/how-to-learn/blob/master/video3%20(1).gif)
@@ -37,6 +37,7 @@ Backend repository: <https://github.com/T-Nick-13/lfcstat-api>
 | [SofaSport](https://rapidapi.com/tipsters/api/sofasport) | Players and team stats API |
 | [SportScore](https://rapidapi.com/tipsters/api/sportscore1) | Players and team stats API  |
 | [Bing News Search](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1) | Latest team news API |
+| [React Splide](https://splidejs.com/) | Flexible react slider |
 
 
 ## Setup

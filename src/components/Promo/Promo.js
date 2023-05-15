@@ -14,7 +14,7 @@ function Promo(props) {
 
   useEffect(() => {
     setChartsData(props.data === undefined ? 0 : props.data);
-  });
+  }, [props.data]);
 
   const data = {
     labels: ['Победы', 'Ничьи', 'Поражения'],
@@ -88,7 +88,7 @@ function Promo(props) {
             </div>
             <div className="promo__card promo__card_small promo__card_black">
               <p>% побед</p>
-              <h3>{(Number(Math.round(chartsData.wins / chartsData.matches) * 100)) || 0}</h3>
+              <h3>{Number(Math.round((chartsData.wins / chartsData.matches) * 100)) || 0}</h3>
             </div>
           </div>
           <p className="promo__note">*Английская Премьер-лига. Сезон 2022/2023</p>
