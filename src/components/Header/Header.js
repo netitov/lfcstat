@@ -16,7 +16,7 @@ function Header(props) {
     if (activeMenu) {
       openMenu();
     }
-  }, [openMenu]);
+  }, [openMenu, props.filterEvents]);
 
   // style active menu li and logo
   function handleLiClass(route) {

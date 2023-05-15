@@ -92,12 +92,12 @@ function App() {
 
   useEffect(() => {
     Promise.all([
-      /* api.getStandings(),
+      api.getStandings(),
       api.getEvents(),
       api.getNews(),
       api.getTeamStats(),
       api.getVideos(),
-      api.getPlayerStats(), */
+      api.getPlayerStats(),
     ])
       .then(([st, evts, nws, ts, vd, ps]) => {
       // whole standings data
