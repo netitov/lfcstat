@@ -9,7 +9,7 @@ function Events(props) {
   }, [props.events]);
 
   return (
-    <div className="events">
+    <div className={`events${props.events.length === 0 ? ' events_inactive' : ''}`}>
       <div className="events__container">
         <h2 className="events__heading">{props.tableTitle}</h2>
         <Link className="events__link" to={props.route} onClick={handleLinkClick}>Подробнее</Link>

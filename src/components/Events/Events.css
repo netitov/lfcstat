@@ -4,6 +4,11 @@
   gap: 9px;
 }
 
+.events_inactive {
+  display: none;
+}
+
+
 .events__container {
   display: flex;
   align-items: baseline;
