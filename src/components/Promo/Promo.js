@@ -91,7 +91,7 @@ function Promo(props) {
               <h3>{Number(Math.round((chartsData.wins / chartsData.matches) * 100)) || 0}</h3>
             </div>
           </div>
-          <p className="promo__note">*Английская Премьер-лига. Сезон 2022/2023</p>
+          <p className="promo__note">*Английская Премьер-лига. Сезон 2023/2024</p>
         </div>
 
       </div>
